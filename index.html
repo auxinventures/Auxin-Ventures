@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Auxin Ventures</title>
   <style>
     :root {
@@ -11,7 +11,7 @@
       --accent-bg: #1a1a1a;
       --accent-text: #fff;
       --footer-text: #ccc;
-      --max-width: 1100px;
+      --content-max-width: 1100px;
     }
 
     body {
@@ -21,6 +21,12 @@
       background-color: var(--main-bg);
       color: var(--text-color);
       line-height: 1.6;
+    }
+
+    .container {
+      max-width: var(--content-max-width);
+      margin: 0 auto;
+      padding: 2rem 1rem;
     }
 
     header {
@@ -38,12 +44,6 @@
     header p {
       font-size: clamp(1rem, 3vw, 1.3rem);
       margin: 0.5rem 0 0;
-    }
-
-    main {
-      padding: 2rem 1rem;
-      max-width: var(--max-width);
-      margin: 0 auto;
     }
 
     section {
@@ -77,6 +77,10 @@
       font-size: 0.875rem;
     }
 
+    footer .container {
+      padding: 0;
+    }
+
     .legal-links {
       margin-top: 0.75rem;
     }
@@ -91,7 +95,6 @@
       text-decoration: underline;
     }
 
-    /* Desktop font scaling */
     @media (min-width: 768px) {
       body {
         font-size: 1.1rem;
@@ -114,13 +117,13 @@
 <body>
   <header>
     <h1>Auxin Ventures</h1>
-    <p>Private Investments</p>
+    <p>Private investment group</p>
   </header>
 
-  <main>
+  <main class="container">
     <section>
       <h2>About Us</h2>
-      <p>Auxin Ventures is a privately held organization focused on global strategic initiatives and advisory.</p>
+      <p>Auxin Ventures is a privately held organization focused on strategic initiatives. We operate across international markets with a focus on discretion and long-term value creation.</p>
     </section>
 
     <section>
@@ -130,13 +133,15 @@
   </main>
 
   <footer>
-    &copy; 2025 Auxin Ventures Ltd. All rights reserved.
-    <div class="legal-links">
-      <a href="#">Privacy Policy</a> |
-      <a href="#">Terms of Use</a> |
-      <a href="#">Cookie Notice</a>
+    <div class="container">
+      &copy; 2025 Auxin Ventures. All rights reserved.
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a> |
+        <a href="#">Terms of Use</a> |
+        <a href="#">Cookie Notice</a>
+      </div>
+      <p>This website does not constitute an offer to sell or a solicitation of an offer to buy any securities.</p>
     </div>
-    <p>This website does not constitute an offer to sell or a solicitation of an offer to buy any securities.</p>
   </footer>
 </body>
 </html>
