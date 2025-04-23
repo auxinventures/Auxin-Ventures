@@ -21,15 +21,24 @@
       background-color: var(--main-bg);
       color: var(--text-color);
       line-height: 1.6;
+      overflow-x: hidden;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
 
     .container {
       width: 100%;
-      max-width: 1600px; /* or any upper limit */
-      padding: 2rem 2rem;
+      max-width: 1600px;
+      padding: 2rem;
       margin: 0 auto;
+      box-sizing: border-box;
     }
 
+    @media (max-width: 767px) {
+      .container {
+        padding: 1rem;
+      }
+    }
 
     header {
       background-color: var(--accent-bg);
@@ -103,26 +112,29 @@
       display: block;
       margin: 2rem 0;
     }
-    
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
     .desktop-img {
       display: block;
     }
-    
+
     .mobile-img {
       display: none;
     }
-    
+
     @media (max-width: 767px) {
       .desktop-img {
         display: none;
       }
-    
+
       .mobile-img {
         display: block;
       }
     }
-
-    
   </style>
 </head>
 <body>
@@ -138,13 +150,10 @@
   </main>
 
   <section class="full-width-image">
-
     <img src="https://raw.githubusercontent.com/strasser-christoph-essec/Auxin-Ventures/main/pic2.JPG"
          alt="Scenic lake view (mobile)"
          class="mobile-img" />
   </section>
-
-  
 
   <main class="container">
     <section>
@@ -156,7 +165,7 @@
       <h2>Leadership</h2>
       <p>Auxin Ventures is led by experienced professionals with a track record across private markets, operational leadership, and strategic advisory. We operate at the intersection of capital, expertise, and opportunity.</p>
     </section>
-    
+
     <section>
       <h2>Focus Areas</h2>
       <ul>
@@ -166,8 +175,8 @@
         <li>Selective Co-Investments</li>
       </ul>
     </section>
-    
-    <p>We maintain relationships with a select network of trusted advisors, family offices, and institutional partners globally.</p>   
+
+    <p>We maintain relationships with a select network of trusted advisors, family offices, and institutional partners globally.</p>
 
     <section>
       <h2>Contact</h2>
