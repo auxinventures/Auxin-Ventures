@@ -136,6 +136,35 @@
         display: block;
       }
     }
+
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #111111;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.875rem;
+      z-index: 1000;
+      display: none;
+    }
+  
+    #cookie-banner button {
+      margin-left: 1rem;
+      background-color: #f8f9fa;
+      color: #111111;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  
+    #cookie-banner button:hover {
+      background-color: #e2e6ea;
+    }
+  
   </style>
 </head>
 <body>
@@ -196,5 +225,25 @@
       <p>This website does not constitute an offer to sell or a solicitation of an offer to buy any securities.</p>
     </div>
   </footer>
+
+<div id="cookie-banner">
+  This site uses cookies to enhance your experience. See our <a href="cookies.html" style="color: #ccc;">Cookie Notice</a>.
+  <button onclick="acceptCookies()">Accept</button>
+</div>
+
+<script>
+  function acceptCookies() {
+    localStorage.setItem('cookiesAccepted', 'true');
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+
+  window.addEventListener('load', () => {
+    if (!localStorage.getItem('cookiesAccepted')) {
+      document.getElementById('cookie-banner').style.display = 'block';
+    }
+  });
+</script>
+
+  
 </body>
 </html>
