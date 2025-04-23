@@ -11,7 +11,7 @@
       --accent-bg: #1a1a1a;
       --accent-text: #fff;
       --footer-text: #ccc;
-      --max-width: 800px;
+      --max-width: 1100px;
     }
 
     body {
@@ -31,12 +31,12 @@
     }
 
     header h1 {
-      font-size: clamp(1.5rem, 5vw, 2.5rem);
+      font-size: clamp(1.5rem, 6vw, 2.8rem);
       margin: 0;
     }
 
     header p {
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      font-size: clamp(1rem, 3vw, 1.3rem);
       margin: 0.5rem 0 0;
     }
 
@@ -57,6 +57,7 @@
 
     p {
       margin-top: 0;
+      font-size: 1rem;
     }
 
     a {
@@ -89,28 +90,47 @@
     .legal-links a:hover {
       text-decoration: underline;
     }
+
+    /* Desktop font scaling */
+    @media (min-width: 768px) {
+      body {
+        font-size: 1.1rem;
+      }
+
+      h2 {
+        font-size: 1.75rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
+
+      footer {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Auxin Ventures</h1>
-    <p>Private investment group</p>
+    <p>Private Investments</p>
   </header>
 
   <main>
     <section>
       <h2>About Us</h2>
-      <p>[Placeholder text] Auxin Ventures is a privately held organization focused on strategic initiatives. We operate across international markets with a focus on discretion and long-term value creation.</p>
+      <p>Auxin Ventures is a privately held organization focused on global strategic initiatives and advisory.</p>
     </section>
 
     <section>
       <h2>Contact</h2>
-      <p>[Placeholder email or form link] For inquiries, please contact us via email at <a href="mailto:info@auxinventures.com">info@auxinventures.com</a>.</p>
+      <p>For inquiries, please contact us via email at <a href="mailto:info@auxinventures.com">info@auxinventures.com</a>.</p>
     </section>
   </main>
 
   <footer>
-    &copy; 2025 Auxin Ventures. All rights reserved.
+    &copy; 2025 Auxin Ventures Ltd. All rights reserved.
     <div class="legal-links">
       <a href="#">Privacy Policy</a> |
       <a href="#">Terms of Use</a> |
