@@ -14,7 +14,7 @@
     }
 
     .box {
-      max-width: 600px;
+      max-width: 400px;
       margin: 4rem auto;
       padding: 2rem;
       border: 1px solid #ddd;
@@ -26,15 +26,80 @@
       margin-bottom: 1rem;
     }
 
-    p {
-      color: #444;
+    label {
+      display: block;
+      text-align: left;
+      margin: 1rem 0 0.25rem;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    button {
+      margin-top: 1.5rem;
+      background-color: #111;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #333;
+    }
+
+    .error-message {
+      color: #c00;
+      margin-top: 1rem;
+      display: none;
     }
   </style>
 </head>
 <body>
   <div class="box">
     <h1>Partner Portal</h1>
-    <p>Access to this section is limited to authorized partners and collaborators.</p>
+    <p style="margin-bottom: 2rem;">Access to this section is limited to authorized partners and collaborators.</p>
+
+    <form id="login-form" onsubmit="return handleLogin(event)">
+      <label for="partner-id">Partner ID</label>
+      <input type="text" id="partner-id" name="partner-id" required />
+
+      <label for="access-key">Access Key</label>
+      <input type="password" id="access-key" name="access-key" required />
+
+      <button type="submit">Sign In</button>
+      <p id="error-message" class="error-message">Invalid credentials. Please try again.</p>
+    </form>
   </div>
+
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+      const id = document.getElementById('partner-id').value.trim();
+      const key = document.getElementById('access-key').value.trim();
+      const error = document.getElementById('error-message');
+
+      // Fake validation (replace with real check later if needed)
+      if (id === 'auxin' && key === 'ventures2025') {
+        // Redirect or load protected content
+        alert('Access granted. Redirecting...');
+        window.location.href = 'confidential.html'; // Replace or change target as needed
+      } else {
+        error.style.display = 'block';
+      }
+
+      return false;
+    }
+  </script>
 </body>
 </html>
