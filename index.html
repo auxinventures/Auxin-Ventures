@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Essay Grader – Auxin Ventures</title>
+  <title>Auxin Ventures</title>
   <style>
     :root {
       --main-bg: #f8f9fa;
@@ -11,6 +11,7 @@
       --accent-bg: #111111;
       --accent-text: #fff;
       --footer-text: #ccc;
+      --content-max-width: 1100px;
     }
 
     body {
@@ -20,26 +21,41 @@
       background-color: var(--main-bg);
       color: var(--text-color);
       line-height: 1.6;
+      overflow-x: hidden;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1600px;
+      padding: 2rem;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 767px) {
+      .container {
+        padding: 1rem;
+      }
     }
 
     header {
       background-color: var(--accent-bg);
       color: var(--accent-text);
       text-align: center;
-      padding: 1rem;
+      padding: 1rem 1rem;
+      margin-bottom: 0; /* Add this */
     }
 
-    header img {
-      max-width: 240px;
-      height: auto;
+    header h1 {
+      font-size: clamp(1.5rem, 6vw, 2.8rem);
+      margin: 0;
     }
 
-    .container {
-      width: 100%;
-      max-width: 1100px;
-      padding: 2rem;
-      margin: 0 auto;
-      box-sizing: border-box;
+    header p {
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      margin: 0.5rem 0 0;
     }
 
     section {
@@ -51,65 +67,18 @@
       margin-bottom: 0.5rem;
     }
 
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      margin-bottom: 2rem;
+    p {
+      margin-top: 0;
+      font-size: 1rem;
     }
 
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+    a {
+      color: var(--accent-bg);
+      text-decoration: none;
     }
 
-    .login-box {
-      max-width: 600px;
-      margin: 0 auto 3rem;
-      padding: 2rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      background-color: #fff;
-    }
-
-    .login-box label {
-      display: block;
-      margin-top: 1rem;
-      font-weight: 600;
-    }
-
-    .login-box input {
-      width: 100%;
-      padding: 0.5rem;
-      margin-top: 0.25rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    .login-box button {
-      margin-top: 1.5rem;
-      width: 100%;
-      background-color: #111;
-      color: #fff;
-      border: none;
-      padding: 0.75rem;
-      font-weight: bold;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .login-box button:hover {
-      background-color: #333;
-    }
-
-    .error-message {
-      color: red;
-      margin-top: 1rem;
-      display: none;
+    a:hover {
+      text-decoration: underline;
     }
 
     footer {
@@ -118,6 +87,10 @@
       text-align: center;
       padding: 1.5rem 1rem;
       font-size: 0.875rem;
+    }
+
+    footer .container {
+      padding: 0;
     }
 
     .legal-links {
@@ -134,6 +107,56 @@
       text-decoration: underline;
     }
 
+    .full-width-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 0 1rem 0; /* Top margin 0, bottom margin preserved */
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .desktop-img {
+      display: block;
+    }
+
+    .mobile-img {
+      display: none;
+    }
+
+    @media (max-width: 767px) {
+      .desktop-img {
+        display: none;
+      }
+
+      .mobile-img {
+        display: block;
+      }
+    }
+
+
+    .nightout-button {
+      display: inline-block;
+      margin-top: 1rem;
+      background-color: #111111;
+      color: #ffffff;
+      font-weight: bold;
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: background-color 0.2s ease;
+    }
+    
+    .nightout-button:hover {
+      background-color: #333333;
+    }
+
+
+    
     #cookie-banner {
       position: fixed;
       bottom: 0;
@@ -146,7 +169,7 @@
       z-index: 1000;
       display: none;
     }
-
+  
     #cookie-banner button {
       margin-left: 1rem;
       background-color: #f8f9fa;
@@ -157,111 +180,104 @@
       cursor: pointer;
       border-radius: 4px;
     }
-
+  
     #cookie-banner button:hover {
       background-color: #e2e6ea;
     }
+  
   </style>
 </head>
 <body>
   <header>
-    <img src="https://raw.githubusercontent.com/strasser-christoph-essec/Auxin-Ventures/main/logo.png" alt="Auxin Ventures" />
+    <img src="https://raw.githubusercontent.com/strasser-christoph-essec/Auxin-Ventures/main/logo.png" alt="Auxin Ventures" style="max-width: 240px; height: auto;" />
   </header>
 
+  <section class="full-width-image">
+    <img src="https://raw.githubusercontent.com/strasser-christoph-essec/Auxin-Ventures/main/pic2.JPG"
+         alt="Scenic lake view (mobile)"
+         class="mobile-img" />
+  </section>
+
   <main class="container">
+
     <section>
-      <h2>Essay Grader – Built for Educators</h2>
-      <p>Upload essays, define your rubric, and receive structured, category-level feedback in seconds. Essay Grader is designed to improve consistency, clarity, and speed—without taking control away from the educator.</p>
+      <h2>About Us</h2>
+      <p>Auxin Ventures is a privately held investment vehicle focused on identifying and pursuing strategic opportunities. We operate flexibly across markets and sectors, with a mandate defined by quality, alignment, and long-term potential. Our presence reflects a commitment to discretion and thoughtful engagement with select partners.</p>
+    </section>
+  
+    <section>
+      <h2>Our Philosophy</h2>
+      <p>We believe in long-term thinking, disciplined stewardship, and quiet execution. Integrity, alignment of interests, and enduring relationships are at the core of how we operate.</p>
     </section>
 
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Essay Grader Demo" frameborder="0" allowfullscreen></iframe>
-    </div>
-
-    <div class="login-box">
-      <h2>Login Portal</h2>
-      <p style="margin-bottom: 1rem;">Restricted access for educators currently enrolled in the pilot.</p>
-      <form onsubmit="return handleLogin(event)">
-        <label for="username">User ID</label>
-        <input type="text" id="username" required />
-        <label for="password">Access Key</label>
-        <input type="password" id="password" required />
-        <button type="submit">Login</button>
-        <p class="error-message" id="error-message">Invalid credentials. Please try again.</p>
-      </form>
-    </div>
+    <section>
+      <h2>Leadership</h2>
+      <p>Auxin Ventures is led by professionals with deep experience across private markets, operational leadership, and strategic advisory. We bring a practical and independent perspective to evaluating and supporting opportunities.</p>
+    </section>
 
     <section>
-      <h2>Features</h2>
+      <h2>Focus Areas</h2>
+      <p>Our interests span a range of opportunities across private capital, strategic collaboration, and long-term value creation. While sector-agnostic, we prioritize clarity of vision, alignment of incentives, and the potential for durable impact.</p>
       <ul>
-        <li>Upload PDF, DOCX, or TXT essays</li>
-        <li>Define your own rubric (e.g. Content=30, Grammar=20)</li>
-        <li>Per-category scores with brief feedback</li>
-        <li>Export results to Excel or PDF</li>
+        <li>Opportunistic Private Investments</li>
+        <li>Strategic Partnerships & Advisory</li>
+        <li>Growth-Stage Initiatives</li>
+        <li>Select Co-Investments & Special Situations</li>
       </ul>
     </section>
 
-    <section>
-      <h2>FAQ</h2>
-      <ul>
-        <li><strong>Who is it for?</strong> Teachers, professors, tutors.</li>
-        <li><strong>Customizable grading?</strong> Yes – fully user-defined rubrics.</li>
-        <li><strong>Feedback accuracy?</strong> AI-powered, with rubric alignment and confidence scoring.</li>
-      </ul>
-    </section>
+<!--     <section>
+      <h2>Associated Pages</h2>
+    
+      <a href="https://nightout-atlas.com/" class="nightout-button" target="_blank" rel="noopener">
+        Nightout Atlas
+      </a>
 
-    <section>
-      <h2>Request Access</h2>
-      <p>We’re currently piloting Essay Grader with a small group of educators. If you're interested, please email <a href="mailto:info@auxin-ventures.com">info@auxin-ventures.com</a>.</p>
+      <p style="margin-top: 0.75rem;">Nightout Atlas is a curated global nightlife guide for discovering the best spots, scenes, and experiences around the world.</p>
     </section>
+ -->
 
+    
     <section>
-      <p style="font-size: 0.9rem; margin-top: 3rem; text-align: center;">Essay Grader is an initiative by <a href="index.html">Auxin Ventures Ltd</a>, developed to enhance tools for educators and institutional partners.</p>
+      <h2>Contact</h2>
+      <p>For inquiries, please contact us via email at <a href="mailto:info@auxinventures.com">info@auxinventures.com</a>.</p>
     </section>
   </main>
-
+  
   <footer>
     <div class="container">
-      &copy; 2025 Auxin Ventures Ltd. All rights reserved.
+      &copy; 2025 Auxin Ventures. All rights reserved.
+
       <div class="legal-links">
         <a href="privacy.html">Privacy Policy</a> |
         <a href="impressum.html">Impressum</a> |
         <a href="cookies.html">Cookie Notice</a> |
-        <a href="index.html">Auxin Home</a>
+        <a href="partner-portal.html">Partner Portal</a>
       </div>
+
+      <p>This website does not constitute an offer to sell or a solicitation of an offer to buy any securities.</p>
     </div>
   </footer>
 
-  <div id="cookie-banner">
-    This site uses cookies to enhance your experience. See our <a href="cookies.html" style="color: #ccc;">Cookie Notice</a>.
-    <button onclick="acceptCookies()">Accept</button>
-  </div>
 
-  <script>
-    function handleLogin(event) {
-      event.preventDefault();
-      const username = document.getElementById('username').value.trim();
-      const password = document.getElementById('password').value.trim();
-      const error = document.getElementById('error-message');
+<div id="cookie-banner">
+  This site uses cookies to enhance your experience. See our <a href="cookies.html" style="color: #ccc;">Cookie Notice</a>.
+  <button onclick="acceptCookies()">Accept</button>
+</div>
 
-      if (username === 'educator' && password === 'essay2025') {
-        alert('Access granted. Redirecting...');
-        window.location.href = 'dashboard.html';
-      } else {
-        error.style.display = 'block';
-      }
+<script>
+  function acceptCookies() {
+    localStorage.setItem('cookiesAccepted', 'true');
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+
+  window.addEventListener('load', () => {
+    if (!localStorage.getItem('cookiesAccepted')) {
+      document.getElementById('cookie-banner').style.display = 'block';
     }
+  });
+</script>
 
-    function acceptCookies() {
-      localStorage.setItem('cookiesAccepted', 'true');
-      document.getElementById('cookie-banner').style.display = 'none';
-    }
-
-    window.addEventListener('load', () => {
-      if (!localStorage.getItem('cookiesAccepted')) {
-        document.getElementById('cookie-banner').style.display = 'block';
-      }
-    });
-  </script>
+  
 </body>
 </html>
