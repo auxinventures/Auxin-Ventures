@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Essay Grader – Auxin Ventures</title>
+  <style>
+    :root {
+      --main-bg: #f8f9fa;
+      --text-color: #333;
+      --accent-bg: #111111;
+      --accent-text: #fff;
+      --footer-text: #ccc;
+      --content-max-width: 1100px;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--main-bg);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--accent-bg);
+      color: var(--accent-text);
+      text-align: center;
+      padding: 1rem;
+    }
+
+    header img {
+      max-width: 240px;
+      height: auto;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      padding: 2rem;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .login-box {
+      max-width: 400px;
+      margin: 0 auto 3rem;
+      padding: 2rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #fff;
+    }
+
+    .login-box label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .login-box button {
+      margin-top: 1.5rem;
+      width: 100%;
+      background-color: #111;
+      color: #fff;
+      border: none;
+      padding: 0.75rem;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .login-box button:hover {
+      background-color: #333;
+    }
+
+    .error-message {
+      color: red;
+      margin-top: 1rem;
+      display: none;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    footer {
+      background-color: var(--accent-bg);
+      color: var(--footer-text);
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.875rem;
+    }
+
+    .legal-links {
+      margin-top: 0.75rem;
+    }
+
+    .legal-links a {
+      color: var(--footer-text);
+      margin: 0 0.5rem;
+      text-decoration: none;
+    }
+
+    .legal-links a:hover {
+      text-decoration: underline;
+    }
+
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #111111;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.875rem;
+      z-index: 1000;
+      display: none;
+    }
+
+    #cookie-banner button {
+      margin-left: 1rem;
+      background-color: #f8f9fa;
+      color: #111111;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    #cookie-banner button:hover {
+      background-color: #e2e6ea;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://raw.githubusercontent.com/strasser-christoph-essec/Auxin-Ventures/main/logo.png" alt="Auxin Ventures Logo" />
+</header>
+
+<main class="container">
+  <section>
+    <h2>Essay Grader – Built for Educators</h2>
+    <p>Upload essays, define your rubric, and receive structured, category-level feedback in seconds. Essay Grader is designed to improve consistency, clarity, and speed—without taking control away from the educator.</p>
+  </section>
+
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/UurWmOwtGZM" title="Essay Grader Demo" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <div class="login-box">
+    <h2>Login Portal</h2>
+    <p style="margin-bottom: 1rem;">Restricted access for educators currently enrolled in the pilot.</p>
+    <form onsubmit="return handleLogin(event)">
+      <label for="username">User ID</label>
+      <input type="text" id="username" required />
+      <label for="password">Access Key</label>
+      <input type="password" id="password" required />
+      <button type="submit">Login</button>
+      <p class="error-message" id="error-message">Invalid credentials. Please try again.</p>
+    </form>
+  </div>
+
+  <section>
+    <h2>Features</h2>
+    <ul>
+      <li>Upload PDF, DOCX, or TXT essays</li>
+      <li>Define your own rubric (e.g. Content=30, Grammar=20)</li>
+      <li>Per-category scores with brief feedback</li>
+      <li>Export results to Excel or PDF</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>FAQ</h2>
+    <ul>
+      <li><strong>Who is it for?</strong> Teachers, professors, tutors.</li>
+      <li><strong>Customizable grading?</strong> Yes – fully user-defined rubrics.</li>
+      <li><strong>Feedback accuracy?</strong> AI-powered, with rubric alignment and confidence scoring.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Request Access</h2>
+    <p>We’re currently piloting with a small group of educators. If you’re interested in joining, enter your email below:</p>
+    <form onsubmit="event.preventDefault(); alert('Thank you. We’ll be in touch.');">
+      <input type="text" placeholder="Your email" required style="padding: 0.5rem; width: 100%; border-radius: 4px; border: 1px solid #ccc;" />
+      <button type="submit" style="margin-top: 1rem; width: 100%; background-color: #111; color: #fff; border: none; padding: 0.75rem; border-radius: 4px;">Submit</button>
+    </form>
+  </section>
+
+  <section>
+    <p style="font-size: 0.9rem; margin-top: 3rem; text-align: center;">Essay Grader is an initiative by <a href="index.html">Auxin Ventures Ltd</a>, developed to enhance tools for educators and institutional partners.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    &copy; 2025 Auxin Ventures Ltd. All rights reserved.
+    <div class="legal-links">
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="impressum.html">Impressum</a> |
+      <a href="cookies.html">Cookie Notice</a> |
+      <a href="index.html">Auxin Home</a>
+    </div>
+  </div>
+</footer>
+
+<div id="cookie-banner">
+  This site uses cookies to enhance your experience. See our <a href="cookies.html" style="color: #ccc;">Cookie Notice</a>.
+  <button onclick="acceptCookies()">Accept</button>
+</div>
+
+<script>
+  function handleLogin(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const error = document.getElementById('error-message');
+    
+    // Simulated login logic (replace with real backend later)
+    if (username === 'educator' && password === 'essay2025') {
+      alert('Access granted. Redirecting...');
+      window.location.href = 'dashboard.html'; // Placeholder
+    } else {
+      error.style.display = 'block';
+    }
+  }
+
+  function acceptCookies() {
+    localStorage.setItem('cookiesAccepted', 'true');
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+
+  window.addEventListener('load', () => {
+    if (!localStorage.getItem('cookiesAccepted')) {
+      document.getElementById('cookie-banner').style.display = 'block';
+    }
+  });
+</script>
+
+</body>
+</html>
