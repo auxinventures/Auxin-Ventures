@@ -256,7 +256,55 @@
     #cookie-banner button:hover {
       background-color: #e2e6ea;
     }
-  
+
+.feature-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.feature-card {
+  flex: 1 1 calc(33.333% - 1rem);
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  text-align: center;
+  box-sizing: border-box;
+  min-width: 250px;
+}
+
+.feature-card i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #111;
+}
+
+.feature-card h3 {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1.2rem;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+@media (max-width: 900px) {
+  .feature-card {
+    flex: 1 1 calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .feature-card {
+    flex: 1 1 100%;
+  }
+}
+
+    
   </style>
 </head>
 <body>
@@ -276,6 +324,43 @@
       <p><strong>Instant feedback on student writing—your rubric, your rules.</strong> Upload scanned or typed essays, define categories like Content, Grammar, and Clarity, and get structured, downloadable evaluations in seconds. Trusted by educators to streamline grading while retaining transparency and control.</p>
     </section>
 
+<section>
+  <h2>Structured Grading Results</h2>
+  <p>Every essay you upload generates professional, export-ready feedback and batch summaries designed for educators.</p>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <i>📄</i>
+      <h3>PDF Feedback Reports</h3>
+      <p>Each student gets detailed, structured feedback with rubric scores and comments.</p>
+    </div>
+
+    <div class="feature-card">
+      <i>📊</i>
+      <h3>Excel Batch Summaries</h3>
+      <p>View sortable performance overviews across classes or assignments in one file.</p>
+    </div>
+
+    <div class="feature-card">
+      <i>🚩</i>
+      <h3>AI & Similarity Flags</h3>
+      <p>Automatically flag likely AI-generated or overly similar submissions for review.</p>
+    </div>
+
+    <div class="feature-card">
+      <i>🎯</i>
+      <h3>Confidence Scoring</h3>
+      <p>See how confident the system is in each evaluation to guide your own review.</p>
+    </div>
+
+    <div class="feature-card">
+      <i>🗂️</i>
+      <h3>Download & Share</h3>
+      <p>Save or print results as PDF or Excel — ready to archive, email, or hand out.</p>
+    </div>
+  </div>
+</section>
+    
   
     <div class="video-container">
       <iframe src="https://www.youtube.com/embed/TUcrfRVPXJM" title="Grade AIQ Demo Video" frameborder="0" allowfullscreen></iframe>
