@@ -16,9 +16,15 @@
       text-align: center;
       padding-top: 6rem;
       padding-bottom: 6rem;
+      position: relative;
     }
 
-    .hero-logo {
+    .hero::before {
+      content: "";
+      display: none;
+    }
+
+    .hero-logo.desktop-only {
       display: block;
       margin: 0 auto 2rem auto;
       max-height: 100px;
@@ -45,11 +51,32 @@
 
     .cta-button:hover { background: #1c54c8; }
 
-    @media (max-width: 480px) {
-      .cta-button {
-        font-size: 1rem;
-        padding: 1rem 1.5rem;
-        white-space: normal;
+    @media (max-width: 768px) {
+      .hero {
+        padding-top: 8rem;
+        padding-bottom: 6rem;
+      }
+
+      .hero::before {
+        display: block;
+        background: url('grade-aiq-owl.png') no-repeat center top;
+        background-size: 160px auto;
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        right: 0;
+        height: 160px;
+        opacity: 0.08;
+        z-index: 0;
+      }
+
+      .desktop-only {
+        display: none;
+      }
+
+      .hero h1, .hero p, .cta-button {
+        position: relative;
+        z-index: 1;
       }
     }
 
@@ -109,7 +136,7 @@
 <body>
 
 <header class="hero">
-  <img src="grade-aiq-logo.png" alt="Grade AIQ logo" class="hero-logo" />
+  <img src="grade-aiq-logo.png" alt="Grade AIQ logo" class="hero-logo desktop-only" />
   <h1>Regain Your Evenings. Grade Smarter with Grade AIQ.</h1>
   <p>Upload essays, apply your rubric, and get AI-powered feedback you control — in minutes, not hours.</p>
   <a class="cta-button" href="#signup">Try Grade AIQ Free</a>
@@ -198,7 +225,6 @@
     <a href="#">Impressum</a>
   </p>
 </footer>
-  
 
 </body>
 </html>
