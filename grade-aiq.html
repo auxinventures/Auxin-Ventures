@@ -203,6 +203,21 @@
   </div>
 </section>
 
+<!-- Watch Video Section -->
+<section id="watch-video" style="text-align: center; padding: 4rem 1rem; background-color: #e8f0ff;">
+  <div onclick="toggleVideo()" style="cursor: pointer; display: inline-flex; align-items: center; gap: 1rem; justify-content: center;">
+    <div style="background-color: #f25c2a; border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
+      <div style="width: 0; height: 0; border-left: 12px solid white; border-top: 8px solid transparent; border-bottom: 8px solid transparent;"></div>
+    </div>
+    <h2 style="font-weight: 600; text-decoration: underline; margin: 0;">Watch Video</h2>
+  </div>
+
+  <div id="video-container" style="margin-top: 2rem; display: none;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+            title="Grade AIQ Overview" frameborder="0" allowfullscreen></iframe>
+  </div>
+</section>
+  
 <section class="testimonial">
   <p>“Grade AIQ helped me cut grading time in half — while keeping my own voice in the feedback.”<br>— High school English teacher, NY</p>
 </section>
@@ -237,5 +252,13 @@
   </p>
 </footer>
 
+<script>
+  function toggleVideo() {
+    const container = document.getElementById("video-container");
+    container.style.display = container.style.display === "none" ? "block" : "none";
+  }
+</script>
+
+  
 </body>
 </html>
