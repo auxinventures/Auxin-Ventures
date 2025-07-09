@@ -1,86 +1,99 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Grade AIQ – AI-powered essay grading for educators. Upload essays, define rubrics, and get instant, editable feedback in multiple languages.">
-  <title>Grade AIQ – Fast, Fair, Flexible Essay Grading</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Grade AIQ – AI essay grading that saves teachers hours. Upload scanned or typed essays, use your rubric, and get transparent, editable feedback instantly.">
+  <title>Grade AIQ – Save Time. Keep Control.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-    body { line-height: 1.6; background: #fff; color: #222; }
+    body { background: #fff; color: #222; line-height: 1.6; }
     header, section, footer { padding: 4rem 2rem; max-width: 1100px; margin: auto; }
     .hero { background: #f4f6fa; text-align: center; padding-top: 6rem; padding-bottom: 6rem; }
     .hero h1 { font-size: 2.8rem; margin-bottom: 1rem; }
     .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
     .cta-button { background: #2d70f2; color: white; border: none; padding: 1rem 2rem; font-size: 1rem; border-radius: 5px; cursor: pointer; text-decoration: none; }
+    .cta-button:hover { background: #1c54c8; }
     .features {
       display: grid;
       grid-template-columns: 1fr;
       gap: 1.5rem;
       margin-top: 3rem;
     }
-    
     @media (min-width: 768px) {
-      .features {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }    
-    
+      .features { grid-template-columns: repeat(3, 1fr); }
+    }
     .feature {
       background: #f9fafc;
       padding: 1.5rem;
       border-radius: 10px;
       text-align: center;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
-      cursor: default;
     }
     .feature:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
-    .feature h3 { margin-bottom: 0.5rem; }
+    .feature h3 { margin-bottom: 0.5rem; font-weight: 600; }
     .steps { margin-top: 4rem; }
     .step { margin-bottom: 2rem; }
-    footer { font-size: 0.9rem; text-align: center; color: #666; padding: 2rem 1rem; border-top: 1px solid #eee; }
-    .footer-links a { margin: 0 0.5rem; color: #666; text-decoration: none; }
+    .testimonial {
+      background: #fff8ec;
+      padding: 2rem;
+      border-radius: 10px;
+      margin-top: 3rem;
+      font-style: italic;
+    }
+    .faq h3 { margin-top: 1.5rem; }
+    footer {
+      font-size: 0.9rem;
+      text-align: center;
+      color: #666;
+      padding: 2rem 1rem;
+      border-top: 1px solid #eee;
+    }
+    .footer-links a {
+      margin: 0 0.5rem;
+      color: #666;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
 
 <header class="hero">
-  <h1>Grade AIQ – AI Essay Grading That Saves Hours, Not Accuracy</h1>
-  <p>Upload essays. Define your rubric. Instantly get editable, professional feedback — in multiple languages and formats.</p>
-  <a class="cta-button" href="#signup">Create Your Account</a>
+  <h1>Regain Your Evenings. Grade Smarter with Grade AIQ.</h1>
+  <p>Upload essays, apply your rubric, and get AI-powered feedback you control — in minutes, not hours.</p>
+  <a class="cta-button" href="#signup">Try Grade AIQ Free</a>
 </header>
 
 <section>
-  <h2>Why Teachers Choose Grade AIQ</h2>
+  <h2>Why Educators Trust Grade AIQ</h2>
   <div class="features">
     <div class="feature">
-      <h3>🕒 Save Time</h3>
-      <p>Grade a full class in minutes with batch processing.</p>
+      <h3>🕒 Save Hours</h3>
+      <p>Batch-grade entire classes in minutes. Spend less time grading and more time teaching.</p>
     </div>
     <div class="feature">
       <h3>🧠 Stay in Control</h3>
-      <p>Edit feedback, set tone and rubric exactly how you want.</p>
+      <p>Edit all AI-generated scores and feedback. Grade AIQ helps — you decide.</p>
     </div>
     <div class="feature">
       <h3>🌐 Multilingual Support</h3>
-      <p>English, German, Spanish, and French — all supported natively.</p>
+      <p>English, German, Spanish, and French — fully localized grading options.</p>
     </div>
     <div class="feature">
-      <h3>🎓 Grade Level Adjustments</h3>
-      <p>From Kindergarten to PhD — adjusted for context and fairness.</p>
+      <h3>🎓 Grade Level Smartness</h3>
+      <p>From primary school to PhD. Automatically adjusts expectations by level.</p>
     </div>
     <div class="feature">
       <h3>🛡️ AI & Similarity Detection</h3>
-      <p>Detect AI-written or similar text with built-in heuristics.</p>
+      <p>Detect likely AI-generated or plagiarized content across all submissions.</p>
     </div>
     <div class="feature">
-      <h3>📄 Exportable Reports</h3>
-      <p>Generate structured feedback in PDF, DOCX, TXT, or Excel.</p>
+      <h3>📄 Instant Reports</h3>
+      <p>Export results as PDF, Word, Excel, or plain text — per essay or class batch.</p>
     </div>
   </div>
 </section>
@@ -89,25 +102,44 @@
   <h2>How It Works</h2>
   <div class="step">
     <h3>1. Upload Essays</h3>
-    <p>Accepts PDF, Word, TXT, images or scanned handwriting.</p>
+    <p>PDFs, Word, TXT, scans, photos — even handwriting. AI OCR handles it all.</p>
   </div>
   <div class="step">
-    <h3>2. Set Your Rubric</h3>
-    <p>Use prebuilt rubrics or define your own categories and point system.</p>
+    <h3>2. Set or Choose a Rubric</h3>
+    <p>Use prebuilt grading rubrics or define your own scoring categories and tone.</p>
   </div>
   <div class="step">
     <h3>3. Review Feedback</h3>
-    <p>AI generates detailed feedback per category — fully editable.</p>
+    <p>Instant AI-generated feedback per category. You can edit everything before export.</p>
   </div>
   <div class="step">
-    <h3>4. Export Results</h3>
-    <p>Download personalized reports or batch summaries in your format of choice.</p>
+    <h3>4. Export Reports</h3>
+    <p>Download reports to share with students or track in Excel. Fully formatted and labeled.</p>
   </div>
 </section>
 
+<section class="testimonial">
+  <p>“Grade AIQ helped me cut grading time in half — while keeping my own voice in the feedback.”<br>— High school English teacher, NY</p>
+</section>
+
+<section class="faq">
+  <h2>Frequently Asked Questions</h2>
+  <h3>Can I use Grade AIQ with handwritten essays?</h3>
+  <p>Yes. Simply upload a photo or scan, and our AI OCR will extract the text for grading.</p>
+
+  <h3>Can I modify AI-generated feedback?</h3>
+  <p>Absolutely. Every score and comment is editable before you export the results.</p>
+
+  <h3>Is it free to try?</h3>
+  <p>Yes. Get started for free — no credit card required. We offer flexible plans as you grow.</p>
+
+  <h3>Does Grade AIQ support other languages?</h3>
+  <p>Yes. You can grade essays in English, German, French, and Spanish, with localized rubrics.</p>
+</section>
+
 <section id="signup">
-  <h2>Create Your Free Account</h2>
-  <p>Start using Grade AIQ today — no credit card required.</p>
+  <h2>Start Grading Smarter Today</h2>
+  <p>Try Grade AIQ free and see how fast fair grading can be.</p>
   <a class="cta-button" href="mailto:info@auxin-ventures.com">Get Started</a>
 </section>
 
