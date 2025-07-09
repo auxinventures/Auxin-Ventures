@@ -205,20 +205,12 @@
 
 <!-- Watch Video Section -->
 <section id="watch-video" style="text-align: center; padding: 4rem 1rem; background-color: #e8f0ff;">
-  <div onclick="toggleVideo()" style="cursor: pointer; display: inline-flex; align-items: center; gap: 1rem; justify-content: center;">
-    <div style="background-color: #f25c2a; border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
-      <div style="width: 0; height: 0; border-left: 12px solid white; border-top: 8px solid transparent; border-bottom: 8px solid transparent;"></div>
-    </div>
-    <h2 style="font-weight: 600; text-decoration: underline; margin: 0;">Watch Video</h2>
-  </div>
-
-  <div id="video-container" style="margin-top: 2rem; display: none;">
-    <video width="100%" controls style="max-width: 720px; border-radius: 10px;">
-      <source src="your-video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
+  <video id="grade-video" width="100%" muted loop playsinline style="max-width: 720px; border-radius: 10px; display: block; margin: auto;">
+    <source src="grade-aiq-video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 </section>
+
   
 <section class="testimonial">
   <p>“Grade AIQ helped me cut grading time in half — while keeping my own voice in the feedback.”<br>— High school English teacher, NY</p>
@@ -255,11 +247,22 @@
 </footer>
 
 <script>
-  function toggleVideo() {
-    const container = document.getElementById("video-container");
-    container.style.display = container.style.display === "none" ? "block" : "none";
-  }
+  // Autoplay video when it enters the viewport
+  const video = document.getElementById('grade-video');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.6 }); // start when 60% visible
+
+  observer.observe(video);
 </script>
+
 
   
 </body>
