@@ -103,8 +103,46 @@
       }
     }
 
+    .reviews {
+      display: grid;
+      gap: 1.5rem;
+    }
+    
+    .review {
+      background: #fff8ec;
+      padding: 1rem 1.25rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    
+    .review:hover {
+      background: #fff2d2;
+    }
+    
+    .review .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-style: normal;
+    }
+    
+    .review .stars {
+      color: #f2b01e;
+      font-size: 1.2rem;
+    }
+    
+    .review .quote {
+      display: none;
+      margin-top: 0.75rem;
+      font-style: italic;
+      font-weight: normal;
+    }
 
 
+
+    
     .features {
       display: grid;
       grid-template-columns: 1fr;
@@ -239,38 +277,49 @@
 
   
 <section class="testimonial">
-  <h2 style="text-align:center;">What Teachers Are Saying</h2>
+  <h2 style="text-align:center; font-style: normal;">What Teachers Are Saying</h2>
   <p style="text-align:center; font-weight: 600; margin-bottom: 2rem;">
     9 out of 10 teachers who try Grade AIQ recommend it to a colleague.
   </p>
   <div class="reviews">
-    <div class="review">
-      “Grade AIQ saves me hours every week. I still make final edits, but it gives me a strong starting point. My students get feedback faster, and I don’t feel overwhelmed.”
-      <br>— Sarah M., High School English Teacher, Illinois, USA
-      <div class="stars">★★★★★</div>
+    <div class="review" onclick="toggleQuote(this)">
+      <div class="header">
+        <span class="name">Sarah M., High School Teacher, IL, USA</span>
+        <span class="stars">★★★★★</span>
+      </div>
+      <div class="quote">Grade AIQ saves me hours every week. I still make final edits, but it gives me a strong starting point. My students get feedback faster, and I don’t feel overwhelmed.</div>
     </div>
-    <div class="review">
-      “I was surprised how well Grade AIQ handles German-language essays. It understands grading expectations and lets me stay in control. It’s become part of my weekly routine.”
-      <br>— Jens K., Secondary Teacher, Munich, Germany
-      <div class="stars">★★★★☆</div>
+    <div class="review" onclick="toggleQuote(this)">
+      <div class="header">
+        <span class="name">Jens K., Secondary Teacher, Munich, Germany</span>
+        <span class="stars">★★★★☆</span>
+      </div>
+      <div class="quote">I was surprised how well Grade AIQ handles German-language essays. It understands grading expectations and lets me stay in control. It’s become part of my weekly routine.</div>
     </div>
-    <div class="review">
-      “We started using Grade AIQ across our English department this term. It doesn’t replace our judgement, but it helps us keep things consistent — and saves time.”
-      <br>— Claire T., Secondary School Teacher, Manchester, UK
-      <div class="stars">★★★★☆</div>
+    <div class="review" onclick="toggleQuote(this)">
+      <div class="header">
+        <span class="name">Claire T., Secondary Teacher, Manchester, UK</span>
+        <span class="stars">★★★★☆</span>
+      </div>
+      <div class="quote">We started using Grade AIQ across our department. It doesn’t replace judgment, but it helps us keep things consistent — and saves a lot of time.</div>
     </div>
-    <div class="review">
-      “I didn’t expect an AI tool to fit my teaching style, but Grade AIQ has done that surprisingly well. I still personalise feedback, but it takes care of the heavy lifting.”
-      <br>— Matteo R., Humanities Teacher, Florence, Italy
-      <div class="stars">★★★★★</div>
+    <div class="review" onclick="toggleQuote(this)">
+      <div class="header">
+        <span class="name">Matteo R., Humanities Teacher, Florence, Italy</span>
+        <span class="stars">★★★★★</span>
+      </div>
+      <div class="quote">I didn’t expect an AI tool to fit my teaching style, but Grade AIQ has done that surprisingly well. I still personalise feedback, but it takes care of the heavy lifting.</div>
     </div>
-    <div class="review">
-      “Over 90% of our staff now use Grade AIQ at least once a week. It’s made our feedback more efficient and more aligned — without losing the teacher’s voice.”
-      <br>— Emily J., Curriculum Coordinator, Oregon, USA
-      <div class="stars">★★★★★</div>
+    <div class="review" onclick="toggleQuote(this)">
+      <div class="header">
+        <span class="name">Emily J., Curriculum Coordinator, Oregon, USA</span>
+        <span class="stars">★★★★★</span>
+      </div>
+      <div class="quote">Over 90% of our staff now use Grade AIQ at least once a week. It’s made our feedback more efficient and more aligned — without losing the teacher’s voice.</div>
     </div>
   </div>
 </section>
+
 
 
 <section class="faq">
@@ -318,6 +367,12 @@
   }, { threshold: 0.6 }); // start when 60% visible
 
   observer.observe(video);
+
+  function toggleQuote(el) {
+    const quote = el.querySelector(".quote");
+    quote.style.display = quote.style.display === "block" ? "none" : "block";
+  }
+  
 </script>
 
 
