@@ -7,32 +7,43 @@
   <title>Grade AIQ – Save Time. Keep Control.</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-    body { background: #fff; color: #222; line-height: 1.6; }
-    header, section, footer { padding: 4rem 2rem; max-width: 1100px; margin: auto; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #fff;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header, section, footer {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
 
     .hero {
-      background: #f4f6fa;
+      background: url('grade-aiq-owl.png') no-repeat center top;
+      background-size: contain;
       text-align: center;
-      padding-top: 6rem;
+      padding-top: 12rem;
       padding-bottom: 6rem;
       position: relative;
     }
 
-    .hero::before {
-      content: "";
-      display: none;
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
     }
 
-    .hero-logo.desktop-only {
-      display: block;
-      margin: 0 auto 2rem auto;
-      max-height: 100px;
-      width: auto;
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
     }
-
-    .hero h1 { font-size: 2.8rem; margin-bottom: 1rem; }
-    .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
 
     .cta-button {
       background: #2d70f2;
@@ -49,34 +60,22 @@
       white-space: nowrap;
     }
 
-    .cta-button:hover { background: #1c54c8; }
+    .cta-button:hover {
+      background: #1c54c8;
+    }
 
     @media (max-width: 768px) {
       .hero {
-        padding-top: 8rem;
-        padding-bottom: 6rem;
+        background-size: 220px auto;
+        background-position: center 1rem;
+        padding-top: 14rem;
       }
 
-      .hero::before {
-        display: block;
-        background: url('grade-aiq-owl.png') no-repeat center top;
-        background-size: 160px auto;
-        position: absolute;
-        top: 1rem;
-        left: 0;
-        right: 0;
-        height: 160px;
-        opacity: 0.08;
-        z-index: 0;
-      }
-
-      .desktop-only {
-        display: none;
-      }
-
-      .hero h1, .hero p, .cta-button {
-        position: relative;
+      .hero h1,
+      .hero p,
+      .cta-button {
         z-index: 1;
+        position: relative;
       }
     }
 
@@ -88,7 +87,9 @@
     }
 
     @media (min-width: 768px) {
-      .features { grid-template-columns: repeat(3, 1fr); }
+      .features {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
 
     .feature {
@@ -104,9 +105,18 @@
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
 
-    .feature h3 { margin-bottom: 0.5rem; font-weight: 600; }
-    .steps { margin-top: 4rem; }
-    .step { margin-bottom: 2rem; }
+    .feature h3 {
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .steps {
+      margin-top: 4rem;
+    }
+
+    .step {
+      margin-bottom: 2rem;
+    }
 
     .testimonial {
       background: #fff8ec;
@@ -116,7 +126,9 @@
       font-style: italic;
     }
 
-    .faq h3 { margin-top: 1.5rem; }
+    .faq h3 {
+      margin-top: 1.5rem;
+    }
 
     footer {
       font-size: 0.9rem;
@@ -136,7 +148,6 @@
 <body>
 
 <header class="hero">
-  <img src="grade-aiq-logo.png" alt="Grade AIQ logo" class="hero-logo desktop-only" />
   <h1>Regain Your Evenings. Grade Smarter with Grade AIQ.</h1>
   <p>Upload essays, apply your rubric, and get AI-powered feedback you control — in minutes, not hours.</p>
   <a class="cta-button" href="#signup">Try Grade AIQ Free</a>
