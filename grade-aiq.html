@@ -1,472 +1,101 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grade AIQ - Auxin Ventures</title>
-
-  <!-- SEO meta description -->
-  <meta name="description" content="Auxin Ventures is a privately held investment firm focused on early-stage, insight-driven opportunities across global markets.">
-
-  <!-- Favicons for all platforms -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Grade AIQ – AI-powered essay grading for educators. Upload essays, define rubrics, and get instant, editable feedback in multiple languages.">
+  <title>Grade AIQ – Fast, Fair, Flexible Essay Grading</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --main-bg: #f8f9fa;
-      --text-color: #333;
-      --accent-bg: #111111;
-      --accent-text: #fff;
-      --footer-text: #ccc;
-      --content-max-width: 1100px;
-    }
-
-    body {
-      font-family: system-ui, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--main-bg);
-      color: var(--text-color);
-      line-height: 1.6;
-      overflow-x: hidden;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1600px;
-      padding: 2rem;
-      margin: 0 auto;
-      box-sizing: border-box;
-    }
-
-    @media (max-width: 767px) {
-      .container {
-        padding: 1rem;
-      }
-    }
-
-    header {
-      background-color: var(--accent-bg);
-      color: var(--accent-text);
-      text-align: center;
-      padding: 1rem 1rem;
-      margin-bottom: 0; /* Add this */
-    }
-
-    header h1 {
-      font-size: clamp(1.5rem, 6vw, 2.8rem);
-      margin: 0;
-    }
-
-    header p {
-      font-size: clamp(1rem, 3vw, 1.3rem);
-      margin: 0.5rem 0 0;
-    }
-
-    section {
-      margin-bottom: 2rem;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      margin-top: 0;
-      font-size: 1rem;
-    }
-
-    a {
-      color: var(--accent-bg);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      background-color: var(--accent-bg);
-      color: var(--footer-text);
-      text-align: center;
-      padding: 1.5rem 1rem;
-      font-size: 0.875rem;
-    }
-
-    footer .container {
-      padding: 0;
-    }
-
-    .legal-links {
-      margin-top: 0.75rem;
-    }
-
-    .legal-links a {
-      color: var(--footer-text);
-      margin: 0 0.5rem;
-      text-decoration: none;
-    }
-
-    .legal-links a:hover {
-      text-decoration: underline;
-    }
-
-    .full-width-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 0 1rem 0; /* Top margin 0, bottom margin preserved */
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    .desktop-img {
-      display: block;
-    }
-
-    .mobile-img {
-      display: none;
-    }
-
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      margin-bottom: 2rem;
-    }
-    
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    
-    .login-box {
-      max-width: 600px;
-      margin: 0 0 3rem 0;
-      padding: 2rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      background-color: #fff;
-    }
-    
-    .login-box label {
-      display: block;
-      margin-top: 1rem;
-      font-weight: 600;
-    }
-    
-    .login-box input {
-      width: 100%;
-      padding: 0.5rem;
-      margin-top: 0.25rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    
-    .login-box button {
-      margin-top: 1.5rem;
-      width: 100%;
-      background-color: #111;
-      color: #fff;
-      border: none;
-      padding: 0.75rem;
-      font-weight: bold;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    
-    .login-box button:hover {
-      background-color: #333;
-    }
-    
-    .error-message {
-      color: red;
-      margin-top: 1rem;
-      display: none;
-    }
-    
-    @media (max-width: 767px) {
-      .desktop-img {
-        display: none;
-      }
-
-      .mobile-img {
-        display: block;
-      }
-    }
-
-
-    .nightout-button {
-      display: inline-block;
-      margin-top: 1rem;
-      background-color: #111111;
-      color: #ffffff;
-      font-weight: bold;
-      padding: 0.75rem 1.25rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 1.1rem;
-      transition: background-color 0.2s ease;
-    }
-    
-    .nightout-button:hover {
-      background-color: #333333;
-    }
-
-    
-
-    
-    #cookie-banner {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background-color: #111111;
-      color: #fff;
-      padding: 1rem;
-      text-align: center;
-      font-size: 0.875rem;
-      z-index: 1000;
-      display: none;
-    }
-  
-    #cookie-banner button {
-      margin-left: 1rem;
-      background-color: #f8f9fa;
-      color: #111111;
-      border: none;
-      padding: 0.5rem 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-  
-    #cookie-banner button:hover {
-      background-color: #e2e6ea;
-    }
-
-.feature-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-.feature-card {
-  flex: 1 1 calc(33.333% - 1rem);
-  background-color: #fff;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  box-sizing: border-box;
-  min-width: 250px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
-  will-change: transform;
-}
-
-.feature-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-  background-color: #fdfdfd;
-}
-
-.feature-card i {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: #111;
-  transition: color 0.2s ease;
-}
-
-.feature-card:hover i {
-  color: #007bff;
-}
-
-@media (max-width: 900px) {
-  .feature-card {
-    flex: 1 1 calc(50% - 1rem);
-  }
-}
-
-@media (max-width: 600px) {
-  .feature-card {
-    flex: 1 1 100%;
-  }
-}
-
-
-    
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+    body { line-height: 1.6; background: #fff; color: #222; }
+    header, section, footer { padding: 4rem 2rem; max-width: 1100px; margin: auto; }
+    .hero { background: #f4f6fa; text-align: center; padding-top: 6rem; padding-bottom: 6rem; }
+    .hero h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+    .cta-button { background: #2d70f2; color: white; border: none; padding: 1rem 2rem; font-size: 1rem; border-radius: 5px; cursor: pointer; text-decoration: none; }
+    .features { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; margin-top: 3rem; }
+    .feature { flex: 1 1 30%; background: #f9fafc; padding: 1.5rem; border-radius: 10px; }
+    .feature h3 { margin-bottom: 0.5rem; }
+    .steps { margin-top: 4rem; }
+    .step { margin-bottom: 2rem; }
+    footer { font-size: 0.9rem; text-align: center; color: #666; padding: 2rem 1rem; border-top: 1px solid #eee; }
+    .footer-links a { margin: 0 0.5rem; color: #666; text-decoration: none; }
   </style>
 </head>
 <body>
-  <header>
-    <img src="https://raw.githubusercontent.com/strasser-christoph-essec/Auxin-Ventures/main/logo.png" alt="Auxin Ventures" style="max-width: 240px; height: auto;" />
-  </header>
 
-  <section class="full-width-image">
-    <img src="https://raw.githubusercontent.com/strasser-christoph-essec/Auxin-Ventures/main/Grade AIQ.png"
-         alt="Grade AIQ"
-         class="mobile-img" />
-  </section>  
-  
-  <main class="container">
-    <section>
-      <h2>Grade AIQ – Fast, Fair, Flexible</h2>
-      <p><strong>Instant feedback on student writing—your rubric, your rules.</strong> Upload scanned or typed essays, define categories like Content, Grammar, and Clarity, and get structured, downloadable evaluations in seconds. Trusted by educators to streamline grading while retaining transparency and control.</p>
-    </section>
+<header class="hero">
+  <h1>Grade AIQ – AI Essay Grading That Saves Hours, Not Accuracy</h1>
+  <p>Upload essays. Define your rubric. Instantly get editable, professional feedback — in multiple languages and formats.</p>
+  <a class="cta-button" href="#signup">Create Your Account</a>
+</header>
 
-<a href="https://essay-grader-pilot-d2objfrxcoaqkvk5xfsrpt.streamlit.app/" class="nightout-button" target="_blank" rel="noopener">Launch Grade AIQ</a>
-
-<p> </p>
-<p>Access is currently limited to educators enrolled in our pilot program.</p>
-  
 <section>
-  <h2>Structured Grading Results</h2>
-  <p>Every essay you upload generates professional, export-ready feedback and batch summaries designed for educators.</p>
-
-  <div class="feature-grid">
-    <div class="feature-card">
-      <i>🖼️</i>
-      <h3>Multi-Format Upload</h3>
-      <p>Upload PDFs, Word, TXT, and even photos or handwriting (PNG/JPG) — extracted via AI-powered OCR.</p>
+  <h2>Why Teachers Choose Grade AIQ</h2>
+  <div class="features">
+    <div class="feature">
+      <h3>🕒 Save Time</h3>
+      <p>Grade a full class in minutes with batch processing.</p>
     </div>
-  
-    <div class="feature-card">
-      <i>🌍</i>
-      <h3>Multilingual Grading</h3>
-      <p>Grade in English, German, French, or Spanish with localized rubrics, tone, and instructions.</p>
+    <div class="feature">
+      <h3>🧠 Stay in Control</h3>
+      <p>Edit feedback, set tone and rubric exactly how you want.</p>
     </div>
-  
-    <div class="feature-card">
-      <i>⚙️</i>
-      <h3>Customizable Rubrics</h3>
-      <p>Define your own scoring categories, per-category instructions, and grading tone (Formal, Kind, Strict).</p>
+    <div class="feature">
+      <h3>🌐 Multilingual Support</h3>
+      <p>English, German, Spanish, and French — all supported natively.</p>
     </div>
-  
-    <div class="feature-card">
-      <i>✏️</i>
-      <h3>Editable Feedback</h3>
-      <p>Manually edit AI-generated scores and feedback before downloading reports.</p>
+    <div class="feature">
+      <h3>🎓 Grade Level Adjustments</h3>
+      <p>From Kindergarten to PhD — adjusted for context and fairness.</p>
     </div>
-  
-    <div class="feature-card">
-      <i>🤖</i>
-      <h3>AI & Similarity Checks</h3>
-      <p>Detect likely AI-written text and flag highly similar essays for plagiarism review.</p>
+    <div class="feature">
+      <h3>🛡️ AI & Similarity Detection</h3>
+      <p>Detect AI-written or similar text with built-in heuristics.</p>
     </div>
-  
-    <div class="feature-card">
-      <i>📊</i>
-      <h3>Smart Reports & Stats</h3>
-      <p>Export structured PDF, DOCX, TXT, and Excel files with summaries, confidence flags, and grammar notes.</p>
+    <div class="feature">
+      <h3>📄 Exportable Reports</h3>
+      <p>Generate structured feedback in PDF, DOCX, TXT, or Excel.</p>
     </div>
   </div>
 </section>
 
-  <section class="full-width-image">
-    <img src="https://raw.githubusercontent.com/strasser-christoph-essec/Auxin-Ventures/main/Grade AIQ Feedback.png"
-         alt="Grade AIQ"
-         class="mobile-img" />
-  </section>  
-  <section class="full-width-image">
-    <img src="https://raw.githubusercontent.com/strasser-christoph-essec/Auxin-Ventures/main/Grade AIQ Dashboard.png"
-         alt="Grade AIQ"
-         class="mobile-img" />
-  </section>
-  <section class="full-width-image">
-    <img src="https://raw.githubusercontent.com/strasser-christoph-essec/Auxin-Ventures/main/Grade AIQ Report.png"
-         alt="Grade AIQ"
-         class="mobile-img" />
-  </section>  
-    
-    
-    
-<!--     <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/TUcrfRVPXJM" title="Grade AIQ Demo Video" frameborder="0" allowfullscreen></iframe>
-    </div> -->
-  
-    <section>
-      <ul>
-        <li><strong>Multi-Format Upload:</strong> Supports PDF, DOCX, TXT, PNG, JPG — including handwritten and photographed essays using AI OCR</li>
-        <li><strong>Multilingual Grading:</strong> English, German, French, and Spanish with localized interface and rubric support</li>
-        <li><strong>Custom Rubrics:</strong> Define categories (e.g., Content, Grammar, Creativity), points, and per-category instructions</li>
-        <li><strong>Grading Scheme Upload:</strong> Align results with official school grading criteria via uploaded PDF or TXT</li>
-        <li><strong>Editable Feedback:</strong> Manually adjust scores and feedback before exporting final reports</li>
-        <li><strong>Educational Level Adjustment:</strong> Automatic scoring adjustments based on grade level from Kindergarten to PhD</li>
-        <li><strong>AI Authorship Detection:</strong> Flags likely AI-written submissions using linguistic and structural heuristics</li>
-        <li><strong>Similarity Detection:</strong> Compares all essays and flags high-overlap pairs for potential plagiarism</li>
-        <li><strong>Confidence-Based Flagging:</strong> Low-confidence scores automatically flagged for manual teacher review</li>
-        <li><strong>Grammar Highlighting:</strong> Visual highlights of grammar and spelling issues in full-text essays</li>
-        <li><strong>Feedback Customization:</strong> Choose tone (Formal, Kind, Strict) and add teacher instructions</li>
-        <li><strong>Scoring Normalization:</strong> Optionally apply approximate normal distribution for large sets</li>
-        <li><strong>Download Options:</strong> Export feedback as PDF, Word, Excel, or plain text</li>
-      </ul>
-    </section>
-  
-    <section>
-      <h2>Request Access</h2>
-      <p>We’re currently piloting with a small group of educators. If you’re interested in joining, please email <a href="mailto:info@auxin-ventures.com">info@auxin-ventures.com</a>.</p>
-    </section>
-  </main>
-
-
-<section style="background-color: #f8f9fa; padding: 0.5rem 1rem 0.5rem 1rem; font-size: 0.95rem; color: #555; text-align: center;">
-  <div class="container" style="padding: 0;">
-    <p style="margin: 0.25rem 0 0 0;"><a href="https://auxin-ventures.com" target="_blank" style="color: #555; text-decoration: underline;">Learn more about Auxin Ventures</a></p>
+<section class="steps">
+  <h2>How It Works</h2>
+  <div class="step">
+    <h3>1. Upload Essays</h3>
+    <p>Accepts PDF, Word, TXT, images or scanned handwriting.</p>
+  </div>
+  <div class="step">
+    <h3>2. Set Your Rubric</h3>
+    <p>Use prebuilt rubrics or define your own categories and point system.</p>
+  </div>
+  <div class="step">
+    <h3>3. Review Feedback</h3>
+    <p>AI generates detailed feedback per category — fully editable.</p>
+  </div>
+  <div class="step">
+    <h3>4. Export Results</h3>
+    <p>Download personalized reports or batch summaries in your format of choice.</p>
   </div>
 </section>
 
+<section id="signup">
+  <h2>Create Your Free Account</h2>
+  <p>Start using Grade AIQ today — no credit card required.</p>
+  <a class="cta-button" href="mailto:info@auxin-ventures.com">Get Started</a>
+</section>
 
-  
-  
-  <footer>
-    <div class="container">
-      &copy; 2025 Auxin Ventures. All rights reserved.
+<footer>
+  <p>&copy; 2025 Auxin Ventures. All rights reserved.</p>
+  <p class="footer-links">
+    <a href="#">Privacy Policy</a> | 
+    <a href="#">Terms of Use</a> | 
+    <a href="#">Impressum</a>
+  </p>
+</footer>
 
-      <div class="legal-links">
-        <a href="privacy.html">Privacy Policy</a> |
-        <a href="impressum.html">Impressum</a> |
-        <a href="cookies.html">Cookie Notice</a> |
-        <a href="partner-portal.html">Partner Portal</a>
-      </div>
-
-      <p>All educational results are estimates and intended for internal academic use only.</p>
-    </div>
-  </footer>
-
-
-<div id="cookie-banner">
-  This site uses cookies to enhance your experience. See our <a href="cookies.html" style="color: #ccc;">Cookie Notice</a>.
-  <button onclick="acceptCookies()">Accept</button>
-</div>
-
-<script>
-  function acceptCookies() {
-    localStorage.setItem('cookiesAccepted', 'true');
-    document.getElementById('cookie-banner').style.display = 'none';
-  }
-
-  window.addEventListener('load', () => {
-    if (!localStorage.getItem('cookiesAccepted')) {
-      document.getElementById('cookie-banner').style.display = 'block';
-    }
-  });
-</script>
-
-  
 </body>
 </html>
