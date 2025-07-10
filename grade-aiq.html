@@ -83,6 +83,28 @@
       }
     }
 
+    .login-button-fixed {
+      position: fixed;
+      top: 1.5rem;
+      right: 2rem;
+      z-index: 1000;
+      background: #fff;
+      color: #2d70f2;
+      border: 2px solid #2d70f2;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    
+    .login-button-fixed:hover {
+      background: #2d70f2;
+      color: #fff;
+    }
+
+    
     .reviews {
       display: grid;
       gap: 1.5rem;
@@ -191,12 +213,9 @@
 </head>
 <body>
 
+<a href="https://essay-grader-pilot-d2objfrxcoaqkvk5xfsrpt.streamlit.app/" class="login-button-fixed">Login</a>  
+  
 <header class="hero">
-  <div style="position: absolute; top: 1.5rem; right: 2rem; z-index: 10;">
-    <a href="https://essay-grader-pilot-d2objfrxcoaqkvk5xfsrpt.streamlit.app/" class="cta-button" style="padding: 0.5rem 1.2rem; font-size: 0.9rem; background: #fff; color: #2d70f2; border: 2px solid #2d70f2;">
-      Login
-    </a>
-  </div>  
   <h1>Regain Your Evenings. Grade Smarter with Grade AIQ.</h1>
   <p>Upload essays, apply your rubric, and get AI-powered feedback you control — in minutes, not hours.</p>
   <a class="cta-button" href="https://essay-grader-pilot-d2objfrxcoaqkvk5xfsrpt.streamlit.app/">Try Grade AIQ Free</a>
