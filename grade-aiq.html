@@ -7,6 +7,16 @@
   <title>Grade AIQ – Save Time. Keep Control.</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --primary: #2d70f2;
+      --primary-hover: #1c54c8;
+      --text-dark: #222;
+      --text-light: #666;
+      --bg-light: #f9fafc;
+      --bg-highlight: #fff8ec;
+      --bg-muted: #f4f6fa;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -15,189 +25,82 @@
     }
 
     body {
-      background: #ffffff;
-      color: #222;
+      background: #fff;
+      color: var(--text-dark);
       line-height: 1.6;
-      font-family: 'Inter', sans-serif;
     }
-    
+
     header, section, footer {
       padding: 4rem 2rem;
       max-width: 1100px;
       margin: auto;
     }
-    
+
+    h1, h2, h3 {
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    /* Hero Section */
     .hero {
       background: url('grade-aiq-logo.png') no-repeat left top;
       background-size: 200px auto;
       text-align: center;
-      padding-top: 5rem;
-      padding-bottom: 6rem;
-      position: relative;
-      background-color: #ffffff;
+      padding: 6rem 2rem;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     }
-    
-    section.features {
-      background-color: #f9fafc;
-      border-radius: 8px;
-    }
-  
-    
-    section.testimonial {
-      background-color: #fff8ec;
-      border-radius: 8px;
-    }
-    
-    section.faq {
-      background-color: #f4f6fa;
-      border-radius: 8px;
-    }
 
-    section.why-trust {
-      background-color: #f8f9fb;
-      border-radius: 8px;
-    }
-    
-    section.steps {
-      background-color: #e8f4ff;
-      border-radius: 8px;
-    }
-    
-    section#signup {
-      background-color: #eaf3ff;
-      border-radius: 8px;
-    }
-    
-    footer {
-      background-color: #f9fafc;
-      border-top: 1px solid #e0e0e0;
-    }
-
-
-    
     .hero h1 {
       font-size: 2.6rem;
-      margin-bottom: 1rem;
     }
 
     .hero p {
       font-size: 1.2rem;
-      margin-bottom: 2rem;
     }
 
     .cta-button {
-      background: #2d70f2;
+      background: var(--primary);
       color: white;
-      border: none;
       padding: 1rem 2rem;
-      font-size: 1rem;
+      border: none;
       border-radius: 5px;
+      font-size: 1rem;
       cursor: pointer;
       text-decoration: none;
       display: inline-block;
       margin-top: 1rem;
-      max-width: 100%;
-      white-space: nowrap;
     }
 
     .cta-button:hover {
-      background: #1c54c8;
+      background: var(--primary-hover);
     }
 
-    @media (max-width: 768px) {
-      .hero {
-        background: url('grade-aiq-owl.png') no-repeat center 1rem;
-        background-size: 140px auto;
-        padding-top: 10rem;
-      }
-    
-      .hero h1,
-      .hero p,
-      .cta-button {
-        z-index: 1;
-        position: relative;
-      }
+    /* Section Backgrounds */
+    .features, .why-trust, .faq, .testimonial, .steps, #signup {
+      border-radius: 8px;
     }
 
-    .login-button-fixed {
-      position: fixed;
-      top: 1.5rem;
-      right: 2rem;
-      z-index: 1000;
-      background: #fff;
-      color: #2d70f2;
-      border: 2px solid #2d70f2;
-      padding: 0.5rem 1.2rem;
-      font-size: 0.9rem;
-      font-weight: 600;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-    
-    .login-button-fixed:hover {
-      background: #2d70f2;
-      color: #fff;
-    }
+    .why-trust { background: #f8f9fb; }
+    .features   { background: var(--bg-light); }
+    .testimonial { background: var(--bg-highlight); }
+    .faq        { background: var(--bg-muted); }
+    .steps      { background: #e8f4ff; }
+    #signup     { background: #eaf3ff; }
 
-    
-    .reviews {
-      display: grid;
-      gap: 1.5rem;
-    }
-    
-    .review {
-      background: #fff8ec;
-      padding: 1rem 1.25rem;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
-    
-    .review:hover {
-      background: #fff2d2;
-    }
-    
-    .review .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-weight: 600;
-      font-style: normal;
-    }
-    
-    .review .stars {
-      color: #f2b01e;
-      font-size: 1.2rem;
-    }
-    
-    .review .quote {
-      display: none;
-      margin-top: 0.75rem;
-      font-style: italic;
-      font-weight: normal;
-    }
-
-
-
-    
-    .features {
+    /* Features Grid */
+    .features-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    @media (min-width: 768px) {
-      .features {
-        grid-template-columns: repeat(3, 1fr);
-      }
+      margin-top: 2rem;
     }
 
     .feature {
-      background: #f9fafc;
+      background: var(--bg-light);
       padding: 1.5rem;
       border-radius: 10px;
       text-align: center;
@@ -208,43 +111,108 @@
       transform: translateY(-5px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
- 
-    .feature h3 {
-      margin-bottom: 0.5rem;
-      font-weight: 600;
+
+    @media (min-width: 768px) {
+      .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .hero {
+        background-position: left 2rem top 2rem;
+      }
     }
 
-    .steps {
-      margin-top: 4rem;
+    @media (max-width: 768px) {
+      .hero {
+        background: url('grade-aiq-owl.png') no-repeat center 1rem;
+        background-size: 140px auto;
+        padding-top: 10rem;
+      }
     }
 
+    /* Steps */
     .step {
       margin-bottom: 2rem;
     }
 
-    .testimonial {
-      background: #fff8ec;
-      padding: 2rem;
+    /* Video Section */
+    #watch-video {
+      background: #e8f0ff;
+      text-align: center;
+    }
+
+    #watch-video video {
+      max-width: 720px;
+      width: 100%;
       border-radius: 10px;
-      margin-top: 3rem;
+    }
+
+    /* Testimonials */
+    .reviews {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .review {
+      background: var(--bg-highlight);
+      padding: 1rem 1.25rem;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .review:hover {
+      background: #fff2d2;
+    }
+
+    .review .header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+    }
+
+    .review .stars {
+      color: #f2b01e;
+    }
+
+    .review .quote {
+      display: none;
+      margin-top: 0.75rem;
       font-style: italic;
     }
 
-    .faq h3 {
-      margin-top: 1.5rem;
+    /* Login Button */
+    .login-button-fixed {
+      position: fixed;
+      top: 1.5rem;
+      right: 2rem;
+      z-index: 1000;
+      background: white;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      padding: 0.5rem 1.2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 5px;
+      text-decoration: none;
     }
 
+    .login-button-fixed:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* Footer */
     footer {
-      font-size: 0.9rem;
+      background: var(--bg-light);
+      border-top: 1px solid #e0e0e0;
       text-align: center;
-      color: #666;
-      padding: 2rem 1rem;
-      border-top: 1px solid #eee;
+      font-size: 0.9rem;
+      color: var(--text-light);
     }
 
     .footer-links a {
       margin: 0 0.5rem;
-      color: #666;
+      color: var(--text-light);
       text-decoration: none;
     }
   </style>
@@ -261,108 +229,57 @@
 
 <section class="why-trust">
   <h2>Why Educators Trust Grade AIQ</h2>
-  <div class="features">
-    <div class="feature">
-      <h3>🕒 Save Hours</h3>
-      <p>Batch-grade entire classes in minutes. Spend less time grading and more time teaching.</p>
-    </div>
-    <div class="feature">
-      <h3>🧠 Stay in Control</h3>
-      <p>Edit all AI-generated scores and feedback. Grade AIQ helps — you decide.</p>
-    </div>
-    <div class="feature">
-      <h3>🌐 Multilingual Support</h3>
-      <p>English, German, Spanish, and French — fully localized grading options.</p>
-    </div>
-    <div class="feature">
-      <h3>🎓 Grade Level Smartness</h3>
-      <p>From primary school to PhD. Automatically adjusts expectations by level.</p>
-    </div>
-    <div class="feature">
-      <h3>🛡️ AI & Similarity Detection</h3>
-      <p>Detect likely AI-generated or plagiarized content across all submissions.</p>
-    </div>
-    <div class="feature">
-      <h3>📄 Instant Reports</h3>
-      <p>Export results as PDF, Word, Excel, or plain text — per essay or class batch.</p>
-    </div>
+  <div class="features-grid">
+    <div class="feature"><h3>🕒 Save Hours</h3><p>Batch-grade entire classes in minutes. Spend less time grading and more time teaching.</p></div>
+    <div class="feature"><h3>🧠 Stay in Control</h3><p>Edit all AI-generated scores and feedback. Grade AIQ helps — you decide.</p></div>
+    <div class="feature"><h3>🌐 Multilingual Support</h3><p>English, German, Spanish, and French — fully localized grading options.</p></div>
+    <div class="feature"><h3>🎓 Grade Level Smartness</h3><p>From primary school to PhD. Automatically adjusts expectations by level.</p></div>
+    <div class="feature"><h3>🛡️ AI & Similarity Detection</h3><p>Detect likely AI-generated or plagiarized content across all submissions.</p></div>
+    <div class="feature"><h3>📄 Instant Reports</h3><p>Export results as PDF, Word, Excel, or plain text — per essay or class batch.</p></div>
   </div>
 </section>
 
 <section class="steps">
   <h2>How It Works</h2>
-  <div class="step">
-    <h3>1. Upload Essays</h3>
-    <p>PDFs, Word, TXT, scans, photos — even handwriting. AI OCR handles it all.</p>
-  </div>
-  <div class="step">
-    <h3>2. Set or Choose a Rubric</h3>
-    <p>Use prebuilt grading rubrics or define your own scoring categories and tone.</p>
-  </div>
-  <div class="step">
-    <h3>3. Review Feedback</h3>
-    <p>Instant AI-generated feedback per category. You can edit everything before export.</p>
-  </div>
-  <div class="step">
-    <h3>4. Export Reports</h3>
-    <p>Download reports to share with students or track in Excel. Fully formatted and labeled.</p>
-  </div>
+  <div class="step"><h3>1. Upload Essays</h3><p>PDFs, Word, TXT, scans, photos — even handwriting. AI OCR handles it all.</p></div>
+  <div class="step"><h3>2. Set or Choose a Rubric</h3><p>Use prebuilt grading rubrics or define your own scoring categories and tone.</p></div>
+  <div class="step"><h3>3. Review Feedback</h3><p>Instant AI-generated feedback per category. You can edit everything before export.</p></div>
+  <div class="step"><h3>4. Export Reports</h3><p>Download reports to share with students or track in Excel. Fully formatted and labeled.</p></div>
 </section>
 
-<!-- Watch Video Section -->
-<section id="watch-video" style="text-align: center; padding: 4rem 1rem; background-color: #e8f0ff;">
-  <video id="grade-video" width="100%" muted loop playsinline style="max-width: 720px; border-radius: 10px; display: block; margin: auto;">
-    <source src="grade-aiq-video.mp4" type="video/mp4">
+<section id="watch-video">
+  <video id="grade-video" muted loop playsinline>
+    <source src="grade-aiq-video.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 </section>
 
-  
 <section class="testimonial">
-  <h2 style="text-align:center; font-style: normal;">What Teachers Are Saying</h2>
-  <p style="text-align:center; font-weight: 600; margin-bottom: 2rem;">
-    9 out of 10 teachers who try Grade AIQ recommend it to a colleague.
-  </p>
+  <h2 style="text-align:center;">What Teachers Are Saying</h2>
+  <p style="text-align:center; font-weight:600;">9 out of 10 teachers who try Grade AIQ recommend it to a colleague.</p>
   <div class="reviews">
     <div class="review" onclick="toggleQuote(this)">
-      <div class="header">
-        <span class="name">Sarah M., High School Teacher, IL, USA</span>
-        <span class="stars">★★★★★</span>
-      </div>
+      <div class="header"><span>Sarah M., IL, USA</span><span class="stars">★★★★★</span></div>
       <div class="quote">Grade AIQ saves me hours every week. I still make final edits, but it gives me a strong starting point. My students get feedback faster, and I don’t feel overwhelmed.</div>
     </div>
     <div class="review" onclick="toggleQuote(this)">
-      <div class="header">
-        <span class="name">Jens K., Secondary Teacher, Munich, Germany</span>
-        <span class="stars">★★★★☆</span>
-      </div>
+      <div class="header"><span>Jens K., Munich</span><span class="stars">★★★★☆</span></div>
       <div class="quote">I was surprised how well Grade AIQ handles German-language essays. It understands grading expectations and lets me stay in control. It’s become part of my weekly routine.</div>
     </div>
     <div class="review" onclick="toggleQuote(this)">
-      <div class="header">
-        <span class="name">Claire T., Secondary Teacher, Manchester, UK</span>
-        <span class="stars">★★★★☆</span>
-      </div>
+      <div class="header"><span>Claire T., Manchester</span><span class="stars">★★★★☆</span></div>
       <div class="quote">We started using Grade AIQ across our department. It doesn’t replace judgment, but it helps us keep things consistent — and saves a lot of time.</div>
     </div>
     <div class="review" onclick="toggleQuote(this)">
-      <div class="header">
-        <span class="name">Matteo R., Humanities Teacher, Florence, Italy</span>
-        <span class="stars">★★★★★</span>
-      </div>
+      <div class="header"><span>Matteo R., Florence</span><span class="stars">★★★★★</span></div>
       <div class="quote">I didn’t expect an AI tool to fit my teaching style, but Grade AIQ has done that surprisingly well. I still personalise feedback, but it takes care of the heavy lifting.</div>
     </div>
     <div class="review" onclick="toggleQuote(this)">
-      <div class="header">
-        <span class="name">Emily J., Curriculum Coordinator, Oregon, USA</span>
-        <span class="stars">★★★★★</span>
-      </div>
+      <div class="header"><span>Emily J., Oregon</span><span class="stars">★★★★★</span></div>
       <div class="quote">Over 90% of our staff now use Grade AIQ at least once a week. It’s made our feedback more efficient and more aligned — without losing the teacher’s voice.</div>
     </div>
   </div>
 </section>
-
-
 
 <section class="faq">
   <h2>FAQs</h2>
@@ -388,36 +305,27 @@
 <footer>
   <p>&copy; 2025 Auxin Ventures. All rights reserved.</p>
   <p class="footer-links">
-    <a href="#">Privacy Policy</a> | 
-    <a href="#">Terms of Use</a> | 
+    <a href="#">Privacy Policy</a> |
+    <a href="#">Terms of Use</a> |
     <a href="#">Impressum</a>
   </p>
 </footer>
 
 <script>
-  // Autoplay video when it enters the viewport
   const video = document.getElementById('grade-video');
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        video.play();
-      } else {
-        video.pause();
-      }
+      if (entry.isIntersecting) video.play();
+      else video.pause();
     });
-  }, { threshold: 0.6 }); // start when 60% visible
-
+  }, { threshold: 0.6 });
   observer.observe(video);
 
   function toggleQuote(el) {
     const quote = el.querySelector(".quote");
     quote.style.display = quote.style.display === "block" ? "none" : "block";
   }
-  
 </script>
 
-
-  
 </body>
 </html>
