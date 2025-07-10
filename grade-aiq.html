@@ -257,8 +257,7 @@
 </section>
 
 <section id="watch-video">
-  <video id="grade-video" muted loop playsinline>
-    <source src="grade-aiq-video.mp4" type="video/mp4" />
+  <video id="grade-video" muted loop autoplay playsinline>
     Your browser does not support the video tag.
   </video>
 </section>
@@ -316,15 +315,24 @@
 
 <script>
   const video = document.getElementById('grade-video');
+  const isMobile = window.innerWidth <= 768;
+
+  const source = document.createElement('source');
+  source.src = isMobile ? 'grade-aiq-video-mobile.mp4' : 'grade-aiq-video-desktop.mp4';
+  source.type = 'video/mp4';
+  video.appendChild(source);
+  video.load();
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) video.play();
       else video.pause();
     });
   }, { threshold: 0.6 });
-  observer.observe(video);
 
+  observer.observe(video);
 </script>
+
 
 </body>
 </html>
