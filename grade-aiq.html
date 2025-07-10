@@ -137,14 +137,19 @@
 
     /* Video Section */
     #watch-video {
+      width: 100vw;
+      height: 100vh;
       background: #e8f0ff;
-      text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
     }
-
+    
     #watch-video video {
-      max-width: 720px;
       width: 100%;
-      border-radius: 10px;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     /* Testimonials */
