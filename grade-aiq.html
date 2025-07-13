@@ -248,30 +248,22 @@
 
     .uni-tag {
       display: inline-block;
-      margin: 0.4rem 0.6rem;
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 1.2rem;
       border-radius: 999px;
       font-weight: 600;
       font-size: 0.95rem;
-      border: 2px solid currentColor;
-      color: #333;
-      background-color: #f5f7fb;
-      transition: transform 0.2s ease;
+      background: var(--bg-light); /* soft light background */
+      border: 2px solid var(--primary); /* consistent with your site theme */
+      color: var(--primary);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease, background 0.3s ease;
     }
     
     .uni-tag:hover {
-      transform: scale(1.05);
+      transform: translateY(-2px);
+      background: #eef4ff;
     }
     
-    /* Optional themed colors */
-    .columbia { color: #002d72; }         /* Columbia blue */
-    .centrale { color: #0070bb; }         /* CentraleSupélec */
-    .politecnico { color: #004c97; }      /* Politecnico di Milano */
-    .essec { color: #000000; }            /* ESSEC black */
-    .bocconi { color: #003865; }          /* Bocconi navy */
-    .st-andrews { color: #005eb8; }       /* St Andrews blue */
-    .kent { color: #003865; }             /* University of Kent navy */
-
     .university-badges {
       display: flex;
       flex-wrap: wrap;
@@ -279,6 +271,7 @@
       gap: 0.75rem;
       margin-top: 2rem;
     }
+
     
     
   </style>
@@ -343,16 +336,17 @@
     </div>
   </div>
 
-  <h2 style="text-align:center;">Built on Experience</h2>
+  <h2 style="text-align:center;">Built on Academic Excellence</h2>
   <p style="text-align:center; font-weight:600;">Created by graduates of top global universities who know education.</p>
-  <div class="university-badges" style="text-align:center; margin-top: 2rem;">
-  <span class="uni-tag columbia">Columbia University</span>
-  <span class="uni-tag centrale">CentraleSupélec</span>
-  <span class="uni-tag politecnico">Politecnico di Milano</span>
-  <span class="uni-tag essec">ESSEC Business School</span>
-  <span class="uni-tag bocconi">Bocconi University</span>
-  <span class="uni-tag st-andrews">University of St Andrews</span>
-  <span class="uni-tag kent">University of Kent</span>
+  <div class="university-badges">
+    <span class="uni-tag">Columbia University</span>
+    <span class="uni-tag">CentraleSupélec</span>
+    <span class="uni-tag">Politecnico di Milano</span>
+    <span class="uni-tag">ESSEC Business School</span>
+    <span class="uni-tag">Bocconi University</span>
+    <span class="uni-tag">University of St Andrews</span>
+    <span class="uni-tag">University of Kent</span>
+  </div>  
 </div>
 
   </section>
