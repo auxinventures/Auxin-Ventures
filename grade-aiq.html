@@ -245,6 +245,34 @@
         font-size: 1rem;
       }
     }
+
+    .uni-tag {
+      display: inline-block;
+      margin: 0.4rem 0.6rem;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 2px solid currentColor;
+      color: #333;
+      background-color: #f5f7fb;
+      transition: transform 0.2s ease;
+    }
+    
+    .uni-tag:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Optional themed colors */
+    .columbia { color: #002d72; }         /* Columbia blue */
+    .centrale { color: #0070bb; }         /* CentraleSupélec */
+    .politecnico { color: #004c97; }      /* Politecnico di Milano */
+    .essec { color: #000000; }            /* ESSEC black */
+    .bocconi { color: #003865; }          /* Bocconi navy */
+    .st-andrews { color: #005eb8; }       /* St Andrews blue */
+    .kent { color: #003865; }             /* University of Kent navy */
+
+    
   </style>
 </head>
 <body>
@@ -309,6 +337,16 @@
   <p style="text-align:center; font-weight:500; font-size: 1rem; margin-top: 3rem; max-width: 800px; margin-left:auto; margin-right:auto;">
     Grade AIQ was built by graduates from <strong>Columbia University</strong>, <strong>CentraleSupélec</strong>, <strong>Politecnico di Milano</strong>, <strong>ESSEC Business School</strong>, <strong>Bocconi University</strong>, the <strong>University of St Andrews</strong>, and the <strong>University of Kent</strong> — united by a mission to save teachers time and improve student feedback.
   </p>
+  <div class="university-badges" style="text-align:center; margin-top: 2rem;">
+  <span class="uni-tag columbia">Columbia University</span>
+  <span class="uni-tag centrale">CentraleSupélec</span>
+  <span class="uni-tag politecnico">Politecnico di Milano</span>
+  <span class="uni-tag essec">ESSEC Business School</span>
+  <span class="uni-tag bocconi">Bocconi University</span>
+  <span class="uni-tag st-andrews">University of St Andrews</span>
+  <span class="uni-tag kent">University of Kent</span>
+</div>
+
   </section>
 
 <section class="faq">
