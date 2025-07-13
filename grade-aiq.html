@@ -272,6 +272,50 @@
       margin-top: 2rem;
     }
 
+
+    .review-slider-container {
+      overflow: hidden;
+      position: relative;
+      margin-top: 2rem;
+    }
+    
+    .review-slider {
+      display: flex;
+      gap: 1.5rem;
+      transition: transform 0.6s ease-in-out;
+      will-change: transform;
+    }
+    
+    .review {
+      min-width: calc((100% - 4.5rem) / 4); /* 4 reviews per slide */
+      background: var(--bg-highlight);
+      padding: 1rem 1.25rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      box-sizing: border-box;
+    }
+    
+    .review:hover {
+      background: #fff2d2;
+    }
+    
+    .review .header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+    }
+    
+    .review .stars {
+      color: #f2b01e;
+    }
+    
+    .review .quote {
+      margin-top: 0.75rem;
+      font-style: italic;
+    }
+
+    
     
     
   </style>
@@ -317,23 +361,20 @@
 <section class="testimonial">
   <h2 style="text-align:center;">What Teachers Are Saying</h2>
   <p style="text-align:center; font-weight:600;">9 out of 10 teachers who try Grade AIQ would recommend it to a colleague.</p>
-  <div class="reviews">
-    <div class="review">
-      <div class="header"><span>Sarah M., IL, USA</span><span class="stars">★★★★★</span></div>
-      <div class="quote">Grade AIQ saves me hours every week. I still make final edits, but it gives me a strong starting point. My students get feedback faster, and I don’t feel overwhelmed.</div>
+  <div class="review-slider-container">
+    <div class="review-slider" id="review-slider">
+      <div class="review"><div class="header"><span>Sarah M., IL, USA</span><span class="stars">★★★★★</span></div><div class="quote">Grade AIQ saves me hours every week. I still make final edits, but it gives me a strong starting point.</div></div>
+      <div class="review"><div class="header"><span>Jens K., Munich</span><span class="stars">★★★★☆</span></div><div class="quote">I was surprised how well Grade AIQ handles German-language essays. It’s become part of my weekly routine.</div></div>
+      <div class="review"><div class="header"><span>Claire T., Manchester</span><span class="stars">★★★★☆</span></div><div class="quote">We started using Grade AIQ across our department. It keeps things consistent and saves time.</div></div>
+      <div class="review"><div class="header"><span>Matteo R., Florence</span><span class="stars">★★★★★</span></div><div class="quote">Didn’t expect an AI tool to fit my style, but this does the heavy lifting really well.</div></div>
+      <div class="review"><div class="header"><span>Lena W., Vienna</span><span class="stars">★★★★★</span></div><div class="quote">Makes grading my bilingual classes easier than ever.</div></div>
+      <div class="review"><div class="header"><span>David S., London</span><span class="stars">★★★★☆</span></div><div class="quote">A great time-saver. Clean, easy, and professional-looking exports.</div></div>
+      <div class="review"><div class="header"><span>Ana G., Barcelona</span><span class="stars">★★★★★</span></div><div class="quote">Finally an AI tool that understands Spanish academic writing. Impressive results!</div></div>
+      <div class="review"><div class="header"><span>Thomas B., Zurich</span><span class="stars">★★★★☆</span></div><div class="quote">Clear interface and good rubric control. A++ for structured feedback.</div></div>
+      <div class="review"><div class="header"><span>Emily R., NYC</span><span class="stars">★★★★★</span></div><div class="quote">Love how fast I can turn around comments now. Students also benefit.</div></div>
+      <div class="review"><div class="header"><span>Helene D., Paris</span><span class="stars">★★★★☆</span></div><div class="quote">The best tool I’ve used for grading in multiple languages. Great value!</div></div>
     </div>
-    <div class="review">
-      <div class="header"><span>Jens K., Munich</span><span class="stars">★★★★☆</span></div>
-      <div class="quote">I was surprised how well Grade AIQ handles German-language essays. It understands grading expectations and lets me stay in control. It’s become part of my weekly routine.</div>
-    </div>
-    <div class="review">
-      <div class="header"><span>Claire T., Manchester</span><span class="stars">★★★★☆</span></div>
-      <div class="quote">We started using Grade AIQ across our department. It doesn’t replace judgment, but it helps us keep things consistent — and saves a lot of time.</div>
-    </div>
-    <div class="review">
-      <div class="header"><span>Matteo R., Florence</span><span class="stars">★★★★★</span></div>
-      <div class="quote">I didn’t expect an AI tool to fit my teaching style, but Grade AIQ has done that surprisingly well. I still personalise feedback, but it takes care of the heavy lifting.</div>
-    </div>
+  </div>
   </div>
 
   <h2 style="text-align:center;">Built on Academic Excellence</h2>
@@ -401,6 +442,23 @@
   }, { threshold: 0.6 });
 
   observer.observe(video);
+</script>
+<script>
+  const slider = document.getElementById('review-slider');
+  const totalReviews = slider.children.length;
+  const reviewsPerPage = 4;
+  let currentIndex = 0;
+
+  function rotateReviews() {
+    const reviewWidth = slider.children[0].offsetWidth + 24; // +gap
+    currentIndex = (currentIndex + 1) % Math.ceil(totalReviews / reviewsPerPage);
+    slider.style.transform = `translateX(-${currentIndex * reviewWidth * reviewsPerPage}px)`;
+  }
+
+  // Initial setup after load
+  window.addEventListener('load', () => {
+    setInterval(rotateReviews, 5000);
+  });
 </script>
 
 
