@@ -462,27 +462,27 @@
 <script>
   const slider = document.getElementById('review-slider');
   const isMobile = window.innerWidth <= 768;
-  const total = slider.children.length;
+  const reviews = slider.children;
+  const total = reviews.length;
   let index = 0;
 
   function rotateReviews() {
     if (isMobile) {
-      const reviewHeight = slider.children[0].offsetHeight + 32; // include vertical gap
-      const itemsPerPage = 2;
-      index = (index + 1) % Math.ceil(total / itemsPerPage);
-      slider.style.transform = `translateY(-${index * reviewHeight * itemsPerPage}px)`;
+      const reviewHeight = reviews[0].offsetHeight + 32; // 32 = vertical gap
+      index = (index + 1) % (total - 2); // show 3 at a time, move by 1
+      slider.style.transform = `translateY(-${index * reviewHeight}px)`;
     } else {
-      const reviewWidth = slider.children[0].offsetWidth + 24; // include horizontal gap
-      const itemsPerPage = 4;
-      index = (index + 1) % Math.ceil(total / itemsPerPage);
-      slider.style.transform = `translateX(-${index * reviewWidth * itemsPerPage}px)`;
+      const reviewWidth = reviews[0].offsetWidth + 24; // 24 = horizontal gap
+      index = (index + 1) % (total - 3); // show 4 at a time, move by 1
+      slider.style.transform = `translateX(-${index * reviewWidth}px)`;
     }
   }
 
   window.addEventListener('load', () => {
-    setInterval(rotateReviews, 5000);
+    setInterval(rotateReviews, 4000);
   });
 </script>
+
 
 
 
