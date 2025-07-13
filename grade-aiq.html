@@ -328,6 +328,11 @@
         flex: none;
         width: 100%;
       }
+      
+      .review-slider-container {
+        max-height: 720px; /* approx height of 3 stacked reviews + 2 gaps */
+        overflow: hidden;
+      }
     }
 
     
@@ -406,7 +411,6 @@
     <p style="text-align:center; font-size: 0.75rem; color: #999; margin-top: 1rem;">
       *University names listed above refer to the educational backgrounds of our team members and do not imply any official endorsement or affiliation.
     </p>
-</div>
 
   </section>
 
@@ -468,9 +472,8 @@
   function rotateReviews() {
     if (isMobile) {
       const reviewHeight = slider.children[0].offsetHeight + 32; // include vertical gap
-      const itemsPerPage = 2;
-      index = (index + 1) % Math.ceil(total / itemsPerPage);
-      slider.style.transform = `translateY(-${index * reviewHeight * itemsPerPage}px)`;
+      index = (index + 1) % (total - 2); // show 3 at a time, shift by 1
+      slider.style.transform = `translateY(-${index * reviewHeight}px)`;
     } else {
       const reviewWidth = slider.children[0].offsetWidth + 24; // include horizontal gap
       const itemsPerPage = 4;
@@ -483,6 +486,7 @@
     setInterval(rotateReviews, 5000);
   });
 </script>
+
 
 
 
