@@ -278,14 +278,16 @@
       margin-top: 2rem;
       height: auto;
     }
-    
+
     .review-slider {
       display: flex;
       flex-wrap: nowrap;
       gap: 1.5rem;
       transition: transform 0.6s ease-in-out;
       will-change: transform;
+      white-space: nowrap;
     }
+
     
     /* Each review box */
     .review {
@@ -465,20 +467,20 @@
 
 <script>
   const slider = document.getElementById('review-slider');
+  const container = document.querySelector('.review-slider-container');
   const isMobile = window.innerWidth <= 768;
   const total = slider.children.length;
   let index = 0;
 
   function rotateReviews() {
     if (isMobile) {
-      const reviewHeight = slider.children[0].offsetHeight + 32; // include vertical gap
-      index = (index + 1) % (total - 2); // show 3 at a time, shift by 1
+      const reviewHeight = slider.children[0].offsetHeight + 32; // 32px gap
+      index = (index + 1) % (total - 2); // shift by 1, keep ~3 visible
       slider.style.transform = `translateY(-${index * reviewHeight}px)`;
     } else {
-      const reviewWidth = slider.children[0].offsetWidth + 24; // include horizontal gap
-      const itemsPerPage = 4;
-      index = (index + 1) % Math.ceil(total / itemsPerPage);
-      slider.style.transform = `translateX(-${index * reviewWidth * itemsPerPage}px)`;
+      const shift = container.offsetWidth;
+      index = (index + 1) % Math.ceil(slider.scrollWidth / shift);
+      slider.style.transform = `translateX(-${index * shift}px)`;
     }
   }
 
@@ -486,6 +488,7 @@
     setInterval(rotateReviews, 5000);
   });
 </script>
+  
 
 
 
