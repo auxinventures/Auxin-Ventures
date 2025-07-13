@@ -272,28 +272,30 @@
       margin-top: 2rem;
     }
 
-
     .review-slider-container {
       overflow: hidden;
       position: relative;
       margin-top: 2rem;
+      height: auto;
     }
     
     .review-slider {
       display: flex;
+      flex-wrap: nowrap;
       gap: 1.5rem;
       transition: transform 0.6s ease-in-out;
       will-change: transform;
     }
     
+    /* Each review box */
     .review {
-      min-width: calc((100% - 4.5rem) / 4); /* 4 reviews per slide */
       background: var(--bg-highlight);
       padding: 1rem 1.25rem;
       border-radius: 10px;
       cursor: pointer;
       transition: background 0.3s ease;
       box-sizing: border-box;
+      flex: 0 0 calc((100% - 4.5rem) / 4); /* Desktop: 4 per row */
     }
     
     .review:hover {
@@ -313,6 +315,19 @@
     .review .quote {
       margin-top: 0.75rem;
       font-style: italic;
+    }
+    
+    /* Mobile override */
+    @media (max-width: 768px) {
+      .review-slider {
+        flex-direction: column;
+        gap: 2rem;
+      }
+    
+      .review {
+        flex: none;
+        width: 100%;
+      }
     }
 
     
@@ -443,23 +458,32 @@
 
   observer.observe(video);
 </script>
+
 <script>
   const slider = document.getElementById('review-slider');
-  const totalReviews = slider.children.length;
-  const reviewsPerPage = 4;
-  let currentIndex = 0;
+  const isMobile = window.innerWidth <= 768;
+  const total = slider.children.length;
+  let index = 0;
 
   function rotateReviews() {
-    const reviewWidth = slider.children[0].offsetWidth + 24; // +gap
-    currentIndex = (currentIndex + 1) % Math.ceil(totalReviews / reviewsPerPage);
-    slider.style.transform = `translateX(-${currentIndex * reviewWidth * reviewsPerPage}px)`;
+    if (isMobile) {
+      const reviewHeight = slider.children[0].offsetHeight + 32; // include vertical gap
+      const itemsPerPage = 2;
+      index = (index + 1) % Math.ceil(total / itemsPerPage);
+      slider.style.transform = `translateY(-${index * reviewHeight * itemsPerPage}px)`;
+    } else {
+      const reviewWidth = slider.children[0].offsetWidth + 24; // include horizontal gap
+      const itemsPerPage = 4;
+      index = (index + 1) % Math.ceil(total / itemsPerPage);
+      slider.style.transform = `translateX(-${index * reviewWidth * itemsPerPage}px)`;
+    }
   }
 
-  // Initial setup after load
   window.addEventListener('load', () => {
     setInterval(rotateReviews, 5000);
   });
 </script>
+
 
 
 </body>
