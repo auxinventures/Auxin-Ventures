@@ -354,21 +354,25 @@
       gap: 1.5rem;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
       padding: 1rem 0;
+    }
+    
+    .how-it-works-container::-webkit-scrollbar {
+      display: none;
     }
     
     .how-step {
       background: #fff;
       border-radius: 10px;
       box-shadow: 0 8px 14px rgba(0, 0, 0, 0.05);
-      flex: 0 0 100%;
-      max-width: 100%;
-      padding: 1.5rem;
       scroll-snap-align: start;
       text-align: center;
       transition: transform 0.4s ease;
+      padding: 1.5rem; /* 🔁 Restore padding */
     }
-    
+
     .how-step img {
       width: 100%;
       max-height: 180px;
@@ -438,22 +442,22 @@
   <div class="how-it-works-container">
     <div class="how-step">
       <img src="step1.jpg" alt="Upload Essays">
-      <h3>1. Upload Essays</h3>
+      <h3>📝 1. Upload Essays</h3>
       <p>PDFs, Word, TXT, scans, photos — even handwriting. AI OCR handles it all.</p>
     </div>
     <div class="how-step">
       <img src="step2.jpg" alt="Choose Rubric">
-      <h3>2. Set or Choose a Rubric</h3>
+      <h3>📊 2. Set or Choose a Rubric</h3>
       <p>Use prebuilt grading rubrics or define your own scoring categories and tone.</p>
     </div>
     <div class="how-step">
       <img src="step3.jpg" alt="Review Feedback">
-      <h3>3. Review Feedback</h3>
+      <h3>🔍 3. Review Feedback</h3>
       <p>Instant AI-generated feedback per category. You can edit everything before export.</p>
     </div>
     <div class="how-step">
       <img src="step4.jpg" alt="Export Reports">
-      <h3>4. Export Reports</h3>
+      <h3>📄 4. Export Reports</h3>
       <p>Download reports to share with students or track in Excel. Fully formatted and labeled.</p>
     </div>
   </div>
