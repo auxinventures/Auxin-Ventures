@@ -451,17 +451,19 @@
     
     @media (min-width: 769px) {
       .how-step.highlight {
-        transform: scale(1.15); /* Bigger pop */
+        transform: scale(1.22) translateY(-10px);  /* 💥 Bigger + lifted */
         z-index: 3;
-        box-shadow: 0 16px 28px rgba(0, 0, 0, 0.18);
+        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.22);
         transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
         opacity: 1;
       }
     
       .how-step {
-        opacity: 0.6;
+        opacity: 0.4;
+        transition: opacity 0.25s ease;
       }
     }
+
 
 
     
