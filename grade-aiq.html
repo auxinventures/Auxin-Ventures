@@ -415,6 +415,26 @@
         max-width: 90%;
       }
     }
+
+    @media (max-width: 768px) {
+      .how-progress-bar {
+        margin: 0.5rem auto 0;
+        height: 4px;
+        width: 60%;
+        background: #e0e0e0;
+        border-radius: 2px;
+        overflow: hidden;
+        position: relative;
+      }
+    
+      .how-progress-fill {
+        height: 100%;
+        background: var(--primary);
+        width: 0%;
+        transition: width 0.3s ease;
+      }
+    }
+    
     
     
   </style>
@@ -467,6 +487,9 @@
       <h3>📄 4. Export Reports</h3>
       <p>Download reports to share with students or track in Excel. Fully formatted and labeled.</p>
     </div>
+  </div>
+  <div class="how-progress-bar">
+    <div class="how-progress-fill" id="howProgressFill"></div>
   </div>
 </section>
 
@@ -614,7 +637,21 @@
   });
 </script>
 
+<script>
+  const howContainer = document.querySelector('.how-it-works-container');
+  const howFill = document.getElementById('howProgressFill');
 
+  if (howContainer && howFill) {
+    howContainer.addEventListener('scroll', () => {
+      const scrollLeft = howContainer.scrollLeft;
+      const scrollWidth = howContainer.scrollWidth - howContainer.clientWidth;
+      const percent = (scrollLeft / scrollWidth) * 100;
+      howFill.style.width = `${percent}%`;
+    });
+  }
+</script>
+
+  
 
 
 
