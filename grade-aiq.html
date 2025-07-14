@@ -703,17 +703,36 @@
             step.classList.remove("highlight");
             step.style.opacity = "0.6";
           });
-
+        
           steps[index].classList.add("highlight");
           steps[index].style.opacity = "1";
-
+        
           index = (index + 1) % steps.length;
-        }, 1500); // Faster cycle
+        }, 3000); // Match review shift timing
       }
     }
   });
 </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector(".how-it-works-container");
+    const steps = document.querySelectorAll(".how-step");
 
+    if (window.innerWidth <= 768 && container && steps.length > 1) {
+      let index = 0;
+      setInterval(() => {
+        index = (index + 1) % steps.length;
+        const scrollLeft = steps[index].offsetLeft - container.offsetLeft;
+        container.scrollTo({
+          left: scrollLeft,
+          behavior: "smooth"
+        });
+      }, 3000);
+    }
+  });
+</script>
+
+  
 </body>
 </html>
