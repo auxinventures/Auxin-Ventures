@@ -451,18 +451,25 @@
     
     @media (min-width: 769px) {
       .how-step.highlight {
-        transform: scale(1.22) translateY(-10px);  /* 💥 Bigger + lifted */
+        transform: scale(1.22) translateY(-10px);
         z-index: 3;
         box-shadow: 0 20px 30px rgba(0, 0, 0, 0.22);
-        transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+        border: 3px solid var(--primary);  /* 💡 Frame */
+        transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease, border 0.25s ease;
         opacity: 1;
       }
     
       .how-step {
         opacity: 0.4;
-        transition: opacity 0.25s ease;
+        border: 3px solid transparent; /* reserve space to avoid layout shift */
+        transition: opacity 0.25s ease, border 0.25s ease;
+      }
+    
+      .how-step:not(.highlight) {
+        filter: grayscale(20%) brightness(0.95);
       }
     }
+
 
 
 
@@ -495,7 +502,6 @@
 
 <section class="steps" id="how-it-works">
   <h2>How It Works</h2>
-  <div class="swipe-hint">Swipe to explore</div>
   <div class="how-it-works-container">
     <div class="how-step">
       <img src="step1.jpg" alt="Upload Essays">
@@ -521,6 +527,7 @@
   <div class="how-progress-bar">
     <div class="how-progress-fill" id="howProgressFill"></div>
   </div>
+  <div class="swipe-hint">Swipe to explore</div>
 </section>
 
 <section id="watch-video">
