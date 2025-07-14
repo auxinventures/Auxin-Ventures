@@ -320,7 +320,6 @@
     /* Mobile override */
     @media (max-width: 768px) {
       .review-slider-container {
-        max-height: 100vh; /* just in case, limit max height */
         overflow: hidden;
         position: relative;
       }
@@ -474,14 +473,22 @@
 
   observer.observe(video);
 </script>
-
 <script>
   window.addEventListener('load', () => {
     const slider = document.getElementById('review-slider');
+    const container = document.querySelector('.review-slider-container');
     const isMobile = window.innerWidth <= 768;
     const reviews = Array.from(slider.children);
     const total = reviews.length;
     let index = 0;
+
+    // ✅ Set dynamic container height for mobile
+    if (isMobile && reviews.length >= 3) {
+      const reviewHeight = reviews[0].getBoundingClientRect().height;
+      const gap = 16; // 1rem = 16px
+      const totalHeight = (reviewHeight * 3) + (gap * 2);
+      container.style.height = `${totalHeight}px`;
+    }
 
     function rotateReviews() {
       if (isMobile) {
@@ -490,8 +497,8 @@
         index = (index + 1) % Math.max(total - visibleCount + 1, 1);
         slider.style.transform = `translateY(-${index * reviewHeight}px)`;
       } else {
-        const reviewWidth = reviews[0].offsetWidth + 24; // margin
-        index = (index + 1) % Math.max(total - 3, 1); // desktop show 4 at a time
+        const reviewWidth = reviews[0].offsetWidth + 24;
+        index = (index + 1) % Math.max(total - 3, 1);
         slider.style.transform = `translateX(-${index * reviewWidth}px)`;
       }
     }
@@ -499,6 +506,7 @@
     setInterval(rotateReviews, 4000);
   });
 </script>
+
 
 
 
