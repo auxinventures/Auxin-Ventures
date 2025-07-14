@@ -451,12 +451,18 @@
     
     @media (min-width: 769px) {
       .how-step.highlight {
-        transform: scale(1.06);
-        z-index: 2;
-        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        transform: scale(1.15); /* Bigger pop */
+        z-index: 3;
+        box-shadow: 0 16px 28px rgba(0, 0, 0, 0.18);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+        opacity: 1;
+      }
+    
+      .how-step {
+        opacity: 0.6;
       }
     }
+
 
     
   </style>
@@ -680,21 +686,26 @@
     const swipeHint = document.querySelector('.swipe-hint');
 
     if (window.innerWidth > 768) {
-      // Hide mobile hint
       if (swipeHint) swipeHint.style.display = 'none';
 
-      // Animate steps
       let index = 0;
       if (steps.length > 0) {
         setInterval(() => {
-          steps.forEach(step => step.classList.remove("highlight"));
+          steps.forEach(step => {
+            step.classList.remove("highlight");
+            step.style.opacity = "0.6";
+          });
+
           steps[index].classList.add("highlight");
+          steps[index].style.opacity = "1";
+
           index = (index + 1) % steps.length;
-        }, 3000);
+        }, 1500); // Faster cycle
       }
     }
   });
 </script>
+
 
 </body>
 </html>
