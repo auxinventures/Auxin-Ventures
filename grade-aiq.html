@@ -446,6 +446,7 @@
     @media (max-width: 768px) {
       .swipe-hint {
         display: block;
+        margin-top: 1rem;
       }
     }
     
@@ -454,14 +455,14 @@
         transform: scale(1.22) translateY(-10px);
         z-index: 3;
         box-shadow: 0 20px 30px rgba(0, 0, 0, 0.22);
-        border: 3px solid var(--primary);  /* 💡 Frame */
+        border: 3px solid #cccccc;  /* ← Changed to light grey */
         transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease, border 0.25s ease;
         opacity: 1;
       }
     
       .how-step {
         opacity: 0.4;
-        border: 3px solid transparent; /* reserve space to avoid layout shift */
+        border: 3px solid transparent;
         transition: opacity 0.25s ease, border 0.25s ease;
       }
     
