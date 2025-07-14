@@ -347,6 +347,64 @@
         overflow: hidden;
       }
     }
+
+
+    .how-it-works-container {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 1rem 0;
+    }
+    
+    .how-step {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 14px rgba(0, 0, 0, 0.05);
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding: 1.5rem;
+      scroll-snap-align: start;
+      text-align: center;
+      transition: transform 0.4s ease;
+    }
+    
+    .how-step img {
+      width: 100%;
+      max-height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    
+    @media (min-width: 769px) {
+      .how-it-works-container {
+        overflow: visible;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    
+      .how-step {
+        flex: 0 1 calc(25% - 1.5rem);
+        max-width: calc(25% - 1.5rem);
+        opacity: 0;
+        transform: translateY(20px);
+        animation: popIn 0.6s ease forwards;
+      }
+    
+      .how-step:nth-child(1) { animation-delay: 0.1s; }
+      .how-step:nth-child(2) { animation-delay: 0.3s; }
+      .how-step:nth-child(3) { animation-delay: 0.5s; }
+      .how-step:nth-child(4) { animation-delay: 0.7s; }
+    
+      @keyframes popIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+
     
     
   </style>
@@ -377,10 +435,28 @@
 
 <section class="steps" id="how-it-works">
   <h2>How It Works</h2>
-  <div class="step"><h3>1. Upload Essays</h3><p>PDFs, Word, TXT, scans, photos — even handwriting. AI OCR handles it all.</p></div>
-  <div class="step"><h3>2. Set or Choose a Rubric</h3><p>Use prebuilt grading rubrics or define your own scoring categories and tone.</p></div>
-  <div class="step"><h3>3. Review Feedback</h3><p>Instant AI-generated feedback per category. You can edit everything before export.</p></div>
-  <div class="step"><h3>4. Export Reports</h3><p>Download reports to share with students or track in Excel. Fully formatted and labeled.</p></div>
+  <div class="how-it-works-container">
+    <div class="how-step">
+      <img src="step1.jpg" alt="Upload Essays">
+      <h3>1. Upload Essays</h3>
+      <p>PDFs, Word, TXT, scans, photos — even handwriting. AI OCR handles it all.</p>
+    </div>
+    <div class="how-step">
+      <img src="step2.jpg" alt="Choose Rubric">
+      <h3>2. Set or Choose a Rubric</h3>
+      <p>Use prebuilt grading rubrics or define your own scoring categories and tone.</p>
+    </div>
+    <div class="how-step">
+      <img src="step3.jpg" alt="Review Feedback">
+      <h3>3. Review Feedback</h3>
+      <p>Instant AI-generated feedback per category. You can edit everything before export.</p>
+    </div>
+    <div class="how-step">
+      <img src="step4.jpg" alt="Export Reports">
+      <h3>4. Export Reports</h3>
+      <p>Download reports to share with students or track in Excel. Fully formatted and labeled.</p>
+    </div>
+  </div>
 </section>
 
 <section id="watch-video">
