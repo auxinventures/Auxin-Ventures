@@ -319,21 +319,24 @@
     
     /* Mobile override */
     @media (max-width: 768px) {
+      .review-slider-container {
+        height: calc(3 * 220px + 2rem * 2); /* show exactly 3 reviews + vertical gaps */
+        overflow: hidden;
+        position: relative;
+      }
+    
       .review-slider {
+        display: flex;
         flex-direction: column;
         gap: 2rem;
+        transition: transform 0.6s ease-in-out;
       }
     
       .review {
-        flex: none;
+        flex: 0 0 auto;
         width: 100%;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .review-slider-container {
-        max-height: 900px; /* enough space for 3 reviews + spacing */
-        overflow: hidden;
+        height: 220px; /* fixed height for consistent rotation */
+        box-sizing: border-box;
       }
     }
 
@@ -480,8 +483,9 @@
 
     function rotateReviews() {
       if (isMobile) {
-        const reviewHeight = reviews[0].offsetHeight + 32; // margin
-        index = (index + 1) % Math.max(total - 2, 1); // mobile show 3 at a time
+        const visibleCount = 3;
+        const reviewHeight = reviews[0].offsetHeight + 32; // 2rem gap = 32px
+        index = (index + 1) % Math.max(total - visibleCount + 1, 1);
         slider.style.transform = `translateY(-${index * reviewHeight}px)`;
       } else {
         const reviewWidth = reviews[0].offsetWidth + 24; // margin
