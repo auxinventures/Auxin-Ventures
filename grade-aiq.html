@@ -474,33 +474,25 @@
   window.addEventListener('load', () => {
     const slider = document.getElementById('review-slider');
     const isMobile = window.innerWidth <= 768;
-    let position = 0;
+    const reviews = Array.from(slider.children);
+    const total = reviews.length;
+    let index = 0;
 
-    function animate() {
-      const step = 0.3; // lower = slower
+    function rotateReviews() {
       if (isMobile) {
-        position -= step;
-        const maxScroll = slider.scrollHeight - slider.parentElement.offsetHeight;
-        if (Math.abs(position) >= maxScroll) {
-          position = 0;
-        }
-        slider.style.transform = `translateY(${position}px)`;
+        const reviewHeight = reviews[0].offsetHeight + 32; // margin
+        index = (index + 1) % Math.max(total - 2, 1); // mobile show 3 at a time
+        slider.style.transform = `translateY(-${index * reviewHeight}px)`;
       } else {
-        position -= step;
-        const maxScroll = slider.scrollWidth - slider.parentElement.offsetWidth;
-        if (Math.abs(position) >= maxScroll) {
-          position = 0;
-        }
-        slider.style.transform = `translateX(${position}px)`;
+        const reviewWidth = reviews[0].offsetWidth + 24; // margin
+        index = (index + 1) % Math.max(total - 3, 1); // desktop show 4 at a time
+        slider.style.transform = `translateX(-${index * reviewWidth}px)`;
       }
-
-      requestAnimationFrame(animate);
     }
 
-    animate();
+    setInterval(rotateReviews, 4000);
   });
 </script>
-
 
 
 
