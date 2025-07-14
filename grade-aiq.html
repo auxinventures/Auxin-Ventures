@@ -330,7 +330,18 @@
       }
     }
 
-    
+    @media (max-width: 768px) {
+      .review-slider-container {
+        max-height: 900px; /* enough space for 3 reviews + spacing */
+        overflow: hidden;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .review-slider-container {
+        overflow: hidden;
+      }
+    }
     
     
   </style>
@@ -460,28 +471,30 @@
 </script>
 
 <script>
-  const slider = document.getElementById('review-slider');
-  const isMobile = window.innerWidth <= 768;
-  const reviews = slider.children;
-  const total = reviews.length;
-  let index = 0;
-
-  function rotateReviews() {
-    if (isMobile) {
-      const reviewHeight = reviews[0].offsetHeight + 32; // 32 = vertical gap
-      index = (index + 1) % (total - 2); // show 3 at a time, move by 1
-      slider.style.transform = `translateY(-${index * reviewHeight}px)`;
-    } else {
-      const reviewWidth = reviews[0].offsetWidth + 24; // 24 = horizontal gap
-      index = (index + 1) % (total - 3); // show 4 at a time, move by 1
-      slider.style.transform = `translateX(-${index * reviewWidth}px)`;
-    }
-  }
-
   window.addEventListener('load', () => {
+    const slider = document.getElementById('review-slider');
+    const isMobile = window.innerWidth <= 768;
+    const reviews = Array.from(slider.children);
+    const total = reviews.length;
+    let index = 0;
+
+    function rotateReviews() {
+      if (isMobile) {
+        const reviewHeight = reviews[0].offsetHeight + 32; // margin
+        index = (index + 1) % Math.max(total - 2, 1); // mobile show 3 at a time
+        slider.style.transform = `translateY(-${index * reviewHeight}px)`;
+      } else {
+        const reviewWidth = reviews[0].offsetWidth + 24; // margin
+        index = (index + 1) % Math.max(total - 3, 1); // desktop show 4 at a time
+        slider.style.transform = `translateX(-${index * reviewWidth}px)`;
+      }
+    }
+
     setInterval(rotateReviews, 4000);
   });
 </script>
+
+
 
 
 
