@@ -452,15 +452,17 @@
     
     @media (min-width: 769px) {
       .how-step.highlight {
+        background: #fff; /* ← Ensure white background */
         transform: scale(1.22) translateY(-10px);
         z-index: 3;
         box-shadow: 0 20px 30px rgba(0, 0, 0, 0.22);
-        border: 3px solid #cccccc;  /* ← Changed to light grey */
+        border: 3px solid #cccccc;  /* Soft grey frame */
         transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease, border 0.25s ease;
         opacity: 1;
       }
     
       .how-step {
+        background: #fff; /* ← Force white background on all */
         opacity: 0.4;
         border: 3px solid transparent;
         transition: opacity 0.25s ease, border 0.25s ease;
@@ -470,10 +472,6 @@
         filter: grayscale(20%) brightness(0.95);
       }
     }
-
-
-
-
     
   </style>
 </head>
