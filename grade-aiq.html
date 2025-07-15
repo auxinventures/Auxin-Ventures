@@ -923,25 +923,28 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const rows = document.querySelectorAll(".card-row");
-  
-    rows.forEach(row => {
-      const cards = Array.from(row.children);
-      if (cards.length <= 1) return;
-  
-      let index = 0;
-  
-      setInterval(() => {
-        const cardHeight = cards[0].offsetHeight;
-        cards.forEach((card) => {
-          card.style.transform = `translateY(-${index * cardHeight}px)`;
-        });
-  
-        index = (index + 1) % cards.length;
-      }, 3000);
-    });
+    if (window.innerWidth <= 768) {  // ✅ Only run on mobile
+      const rows = document.querySelectorAll(".card-row");
+    
+      rows.forEach(row => {
+        const cards = Array.from(row.children);
+        if (cards.length <= 1) return;
+    
+        let index = 0;
+    
+        setInterval(() => {
+          const cardHeight = cards[0].offsetHeight;
+          cards.forEach((card) => {
+            card.style.transform = `translateY(-${index * cardHeight}px)`;
+          });
+    
+          index = (index + 1) % cards.length;
+        }, 3000);
+      });
+    }
   });
 </script>
+
   
   
   
