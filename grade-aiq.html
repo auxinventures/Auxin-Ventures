@@ -533,10 +533,11 @@
 
     .card-row {
       display: flex;
-      overflow-x: auto;
+      justify-content: center;
       gap: 1rem;
+      flex-wrap: wrap;
     }
-
+    
     .feature-card {
       background: var(--bg-light);
       padding: 1.5rem;
@@ -544,7 +545,8 @@
       text-align: center;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       min-width: 280px;
-      flex: 0 0 280px;
+      max-width: 280px;
+      flex: 0 0 auto;
     }
     
     .feature-card:hover {
@@ -554,20 +556,19 @@
     
     @media (max-width: 768px) {
       .card-row {
-        display: flex;
         flex-direction: column;
-        height: 180px; /* fixed height */
-        overflow: hidden; /* disable manual scrolling */
+        height: 180px;
+        overflow: hidden;
         position: relative;
       }
     
       .feature-card {
-        flex: 0 0 100px;
         width: 100%;
         margin: 0;
         transition: transform 0.5s ease;
       }
     }
+
     
   </style>
 </head>
@@ -923,23 +924,25 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const rows = document.querySelectorAll(".card-row");
+    if (window.innerWidth <= 768) {
+      const rows = document.querySelectorAll(".card-row");
   
-    rows.forEach(row => {
-      const cards = Array.from(row.children);
-      if (cards.length <= 1) return;
+      rows.forEach(row => {
+        const cards = Array.from(row.children);
+        if (cards.length <= 1) return;
   
-      let index = 0;
+        let index = 0;
   
-      setInterval(() => {
-        const cardHeight = cards[0].offsetHeight;
-        cards.forEach((card) => {
-          card.style.transform = `translateY(-${index * cardHeight}px)`;
-        });
+        setInterval(() => {
+          const cardHeight = cards[0].offsetHeight;
+          cards.forEach((card, i) => {
+            card.style.transform = `translateY(-${index * cardHeight}px)`;
+          });
   
-        index = (index + 1) % cards.length;
-      }, 3000);
-    });
+          index = (index + 1) % cards.length;
+        }, 3000);
+      });
+    }
   });
 </script>
   
