@@ -670,13 +670,15 @@
     
     .how-step {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      margin-bottom: 4rem;
+      align-items: center; /* vertically centers */
+      justify-content: center; /* center content as a whole */
+      gap: 4rem;
+      margin: 4rem auto;
       text-align: left;
-      flex-wrap: wrap;
+      max-width: 1000px;
+      flex-wrap: nowrap;
     }
+
     
     .how-step.reverse {
       flex-direction: row-reverse;
