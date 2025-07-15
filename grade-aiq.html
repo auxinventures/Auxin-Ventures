@@ -617,6 +617,94 @@
       transform: rotate(45deg);
     }
 
+    .how-it-works {
+      max-width: 1100px;
+      margin: auto;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    
+    .how-it-works h2 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .how-subtext {
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      color: #666;
+      font-size: 1rem;
+    }
+    
+    .how-step {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 4rem;
+      text-align: left;
+      flex-wrap: wrap;
+    }
+    
+    .how-step.reverse {
+      flex-direction: row-reverse;
+    }
+    
+    .how-text {
+      flex: 1;
+      min-width: 280px;
+    }
+    
+    .how-text h3 {
+      font-size: 1.6rem;
+      margin-top: 0.3rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .how-text p {
+      font-size: 1rem;
+      color: #444;
+    }
+    
+    .step-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: var(--primary, #2d70f2);
+      color: white;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      margin-bottom: 0.5rem;
+    }
+    
+    .how-graphic {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 280px;
+    }
+    
+    .how-graphic img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    
+    /* Mobile layout */
+    @media (max-width: 768px) {
+      .how-step,
+      .how-step.reverse {
+        flex-direction: column;
+        text-align: center;
+      }
+    
+      .how-text,
+      .how-graphic {
+        text-align: center;
+      }
+    }
 
     
     
@@ -709,34 +797,59 @@
 
 
 
-<section class="steps" id="how-it-works">
-  <h2>How It Works</h2>
-  <div class="how-it-works-container">
-    <div class="how-step">
-      <img src="grade-aiq-owl-step1.png" alt="Upload Essays">
-      <h3>📝 1. Upload Essays</h3>
-      <p>PDFs, Word, TXT, scans, photos — even handwriting. AI OCR handles it all.</p>
+<section class="how-it-works">
+  <h2>How does it work?</h2>
+  <p class="how-subtext">
+    Save hours every week. In just four simple steps, Grade AIQ gives you fast, editable feedback — tailored to your grading style and students' needs.
+  </p>
+
+  <!-- Step 1 -->
+  <div class="how-step">
+    <div class="how-text">
+      <span class="step-badge">1st STEP</span>
+      <h3>Upload Essays</h3>
+      <p>Drag in PDFs, Word docs, or scans. Our OCR even works with handwriting.</p>
     </div>
-    <div class="how-step">
-      <img src="grade-aiq-owl-step2.png" alt="Upload Essays">
-      <h3>📊 2. Set or Choose a Rubric</h3>
-      <p>Use prebuilt grading rubrics or define your own scoring categories and tone.</p>
-    </div>
-    <div class="how-step">
-      <img src="grade-aiq-owl-step3.png" alt="Upload Essays">
-      <h3>🔍 3. Review Feedback</h3>
-      <p>Instant AI-generated feedback per category. You can edit everything before export.</p>
-    </div>
-    <div class="how-step">
-      <img src="grade-aiq-owl-step4.png" alt="Upload Essays">
-      <h3>📄 4. Export Reports</h3>
-      <p>Download reports to share with students or track in Excel. Fully formatted and labeled.</p>
+    <div class="how-graphic">
+      <img src="owl-upload.png" alt="Owl Uploads Essay" />
     </div>
   </div>
-  <div class="how-progress-bar">
-    <div class="how-progress-fill" id="howProgressFill"></div>
+
+  <!-- Step 2 -->
+  <div class="how-step reverse">
+    <div class="how-text">
+      <span class="step-badge">2nd STEP</span>
+      <h3>Select or Set a Rubric</h3>
+      <p>Choose from prebuilt options or customize point weights, tone, and categories.</p>
+    </div>
+    <div class="how-graphic">
+      <img src="owl-rubric.png" alt="Owl Chooses Rubric" />
+    </div>
   </div>
-  <div class="swipe-hint">Swipe to explore</div>
+
+  <!-- Step 3 -->
+  <div class="how-step">
+    <div class="how-text">
+      <span class="step-badge">3rd STEP</span>
+      <h3>Review Feedback</h3>
+      <p>Instant feedback, category by category — fully editable before sharing.</p>
+    </div>
+    <div class="how-graphic">
+      <img src="owl-review.png" alt="Owl Reviews Feedback" />
+    </div>
+  </div>
+
+  <!-- Step 4 -->
+  <div class="how-step reverse">
+    <div class="how-text">
+      <span class="step-badge">4th STEP</span>
+      <h3>Export Reports</h3>
+      <p>Download polished PDFs, DOCX, or Excel summaries — per essay or batch.</p>
+    </div>
+    <div class="how-graphic">
+      <img src="owl-export.png" alt="Owl Exports Reports" />
+    </div>
+  </div>
 </section>
 
 <section id="watch-video">
