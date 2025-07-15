@@ -626,18 +626,6 @@
       text-align: center;
     }
     
-    .how-step {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      background: var(--bg-light);
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
 
     
     .how-step.reverse {
@@ -691,34 +679,57 @@
       gap: 2rem;
       margin-bottom: 2rem;
     }
-    
+        
     @media (min-width: 769px) {
       .how-step-row {
-        flex-direction: row;
+        display: flex;
         justify-content: center;
+        align-items: center;
         gap: 2rem;
       }
     
-    .how-step {
-      flex-direction: row;
-      align-items: center;
-      text-align: left;
-      max-width: 100%;
-      gap: 2rem;
-    }
-    
-      .how-step.reverse {
-        flex-direction: column;
+      .how-step {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        max-width: 1000px;
+        margin: auto;
+        text-align: left;
       }
     
-      .how-text, .how-graphic {
-        max-width: 100%;
-        flex: none;
+      .how-step.reverse {
+        flex-direction: row-reverse;
+      }
+    
+      .how-text,
+      .how-graphic {
+        flex: 1;
+        min-width: 300px;
+        max-width: 50%;
+      }
+    
+      .how-text {
+        text-align: left;
+        padding: 0 1rem;
+      }
+    
+      .how-text h3,
+      .how-text p {
+        text-align: left;
+      }
+    
+      .how-graphic {
+        justify-content: center;
+        display: flex;
       }
     
       .how-graphic img {
-        max-width: 90%;
+        max-width: 100%;
         height: auto;
+        border-radius: 1rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
       }
     }
     
