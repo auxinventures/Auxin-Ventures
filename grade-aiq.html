@@ -452,29 +452,46 @@
         margin-top: 1rem;
       }
     }
-    
+
     @media (min-width: 769px) {
-      .how-step.highlight {
-        background: #fff; /* ← Ensure white background */
-        transform: scale(1.22) translateY(-10px);
-        z-index: 3;
-        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.22);
-        border: 3px solid #cccccc;  /* Soft grey frame */
-        transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease, border 0.25s ease;
-        opacity: 1;
-      }
-    
       .how-step {
-        background: #fff; /* ← Force white background on all */
-        opacity: 0.4;
-        border: 3px solid transparent;
-        transition: opacity 0.25s ease, border 0.25s ease;
+        opacity: 1 !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        transform: none !important;
       }
     
-      .how-step:not(.highlight) {
-        filter: none;
+      .how-step.highlight {
+        all: unset;
       }
     }
+
+    @media (min-width: 769px) {
+      .how-step {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        margin-bottom: 4rem;
+      }
+    
+      .how-text,
+      .how-graphic {
+        max-width: 480px;
+        width: 100%;
+      }
+    
+      .how-text {
+        padding: 0 1rem;
+      }
+    
+      .how-graphic img {
+        margin: 0 auto;
+        box-shadow: none;
+      }
+    }
+
+    
     
     .faq-section {
       background: #f9fafc;
@@ -1066,19 +1083,6 @@
       if (swipeHint) swipeHint.style.display = 'none';
 
       let index = 0;
-      if (steps.length > 0) {
-        setInterval(() => {
-          steps.forEach(step => {
-            step.classList.remove("highlight");
-            step.style.opacity = "0.6";
-          });
-        
-          steps[index].classList.add("highlight");
-          steps[index].style.opacity = "1";
-        
-          index = (index + 1) % steps.length;
-        }, 3000); // Match review shift timing
-      }
     }
   });
 </script>
