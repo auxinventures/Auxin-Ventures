@@ -556,18 +556,19 @@
       .card-row {
         display: flex;
         flex-direction: column;
-        height: 180px; /* fixed height */
-        overflow: hidden; /* disable manual scrolling */
-        position: relative;
+        gap: 1rem;
+        height: auto;
+        overflow: visible;
       }
     
       .feature-card {
-        flex: 0 0 100px;
+        flex: none;
         width: 100%;
         margin: 0;
-        transition: transform 0.5s ease;
+        transform: none !important; /* disables leftover animations */
       }
     }
+
     
   </style>
 </head>
@@ -921,27 +922,7 @@
   });
 </script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const rows = document.querySelectorAll(".card-row");
-  
-    rows.forEach(row => {
-      const cards = Array.from(row.children);
-      if (cards.length <= 1) return;
-  
-      let index = 0;
-  
-      setInterval(() => {
-        const cardHeight = cards[0].offsetHeight;
-        cards.forEach((card) => {
-          card.style.transform = `translateY(-${index * cardHeight}px)`;
-        });
-  
-        index = (index + 1) % cards.length;
-      }, 3000);
-    });
-  });
-</script>
+
   
   
   
