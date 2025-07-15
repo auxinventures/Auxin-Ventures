@@ -625,22 +625,19 @@
       font-size: 1rem;
       text-align: center;
     }
-
     
     .how-step {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
       gap: 2rem;
-      margin: 2rem auto;
-      max-width: 900px;
       background: var(--bg-light);
       padding: 2rem;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
-
 
     
     .how-step.reverse {
@@ -702,10 +699,13 @@
         gap: 2rem;
       }
     
-      .how-step {
-        max-width: 45%;
-        flex: 1;
-      }
+    .how-step {
+      flex-direction: row;
+      align-items: center;
+      text-align: left;
+      max-width: 100%;
+      gap: 2rem;
+    }
     
       .how-step.reverse {
         flex-direction: column;
