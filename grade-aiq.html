@@ -803,21 +803,6 @@
         margin-top: 0.5rem;
       }
     }
-
-    @media (min-width: 769px) {
-      .how-steps-mobile-scroll,
-      .how-dots,
-      .swipe-hint {
-        display: none !important;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .how-step-row {
-        display: none !important;
-      }
-    }
-
     
     
     
@@ -1284,9 +1269,6 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    // Disable animation on mobile
-    if (window.innerWidth <= 768) return;
-
     const steps = document.querySelectorAll(".how-step");
 
     const observer = new IntersectionObserver((entries) => {
@@ -1301,7 +1283,7 @@
             el.classList.add("slide-in-right");
           }
 
-          observer.unobserve(el);
+          observer.unobserve(el); // Run only once
         }
       });
     }, {
@@ -1311,7 +1293,6 @@
     steps.forEach(step => observer.observe(step));
   });
 </script>
-
   
 <script>
   document.addEventListener("DOMContentLoaded", () => {
