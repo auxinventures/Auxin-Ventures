@@ -564,6 +564,23 @@
         margin-bottom: 1rem;
       }
     }
+
+    @media (max-width: 768px) {
+      .card-row {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        flex-wrap: nowrap;
+      }
+    
+      .feature-card {
+        flex: 0 0 90%;
+        min-width: 90%;
+        scroll-snap-align: start;
+        margin-right: 1rem;
+      }
+    }
+
     
     
   </style>
@@ -583,11 +600,11 @@
 <section class="why-trust">
   <h2>Why Educators Trust Grade AIQ</h2>
   <p style="text-align:center; color: #666; max-width: 700px; margin: auto; margin-bottom: 2rem;">
-  <span style="background:#fff2d2; padding: 0.3rem 0.6rem; border-radius: 999px; font-weight: 600;">Developed with real teachers.</span>
+  <span style="background:#fff2d2; padding: 0.3rem 0.6rem; border-radius: 999px; font-weight: 600;">Built with feedback from real teachers.</span>
   </p>
   <div class="feature-group">
     <h3>⏱️ Save Time & Stay in Control</h3>
-    <div class="card-row">
+    <div class="card-row scroll-container">
       <div class="feature-card">
         <h4>Save Time</h4>
         <p>Grade full batches in minutes — focus more on teaching, not admin.</p>
@@ -605,7 +622,7 @@
   
   <div class="feature-group">
     <h3>🎓 Smarter, Fairer Grading</h3>
-    <div class="card-row">
+    <div class="card-row scroll-container">
       <div class="feature-card">
         <h4>Level-Aware Scoring</h4>
         <p>From primary school to PhD — feedback adapts to student level.</p>
@@ -623,7 +640,7 @@
   
   <div class="feature-group">
     <h3>🌍 Flexible & Inclusive</h3>
-    <div class="card-row">
+    <div class="card-row scroll-container">
       <div class="feature-card">
         <h4>Upload Any Format</h4>
         <p>Accepts typed or handwritten essays in nearly any file format.</p>
