@@ -455,41 +455,53 @@
 
     @media (min-width: 769px) {
       .how-step {
-        opacity: 1 !important;
-        background: transparent !important;
-        border: none !important;
-        box-shadow: none !important;
-        transform: none !important;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        flex-wrap: nowrap;
+        text-align: center;
+        margin-bottom: 4rem;
       }
     
-      .how-step.highlight {
-        all: unset;
-      }
-    }
-
-    @media (min-width: 769px) {
-      .how-step {
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        margin-bottom: 4rem;
+      .how-step.reverse {
+        flex-direction: row-reverse;
       }
     
       .how-text,
       .how-graphic {
-        max-width: 480px;
-        width: 100%;
+        flex: 1;
+        min-width: 300px;
+        max-width: 50%;
       }
     
       .how-text {
+        text-align: center;
         padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      .how-text h3,
+      .how-text p {
+        text-align: center;
+      }
+    
+      .how-graphic {
+        justify-content: center;
+        display: flex;
       }
     
       .how-graphic img {
-        margin: 0 auto;
-        box-shadow: none;
+        max-width: 100%;
+        height: auto;
+        border-radius: 1rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
       }
     }
+
 
     
     
@@ -710,32 +722,6 @@
       }
     }
 
-    @media (min-width: 769px) {
-      .how-step {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 2rem;
-        flex-wrap: nowrap; /* ← prevents stacking on desktop */
-        text-align: left;
-      }
-    
-      .how-text,
-      .how-graphic {
-        flex: 1;
-        min-width: 300px;
-        max-width: 50%;
-      }
-    
-      .how-graphic {
-        justify-content: flex-end;
-      }
-    
-      .how-text {
-        text-align: left;
-        padding-right: 1rem;
-      }
-    }
     
     
   </style>
