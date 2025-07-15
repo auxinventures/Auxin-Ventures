@@ -556,18 +556,20 @@
       .card-row {
         display: flex;
         flex-direction: column;
-        height: 150px; /* fixed height */
-        overflow: hidden; /* disable manual scrolling */
+        align-items: center;           /* 🔑 center horizontally */
+        justify-content: center;       /* 🔑 center vertically */
+        height: 180px;                 /* or match your tallest card */
+        overflow: hidden;
         position: relative;
       }
     
       .feature-card {
-        flex: 0 0 100px;
-        width: 100%;
-        margin: 0;
+        width: 90%;                    /* avoid full width for margin balance */
         transition: transform 0.5s ease;
+        margin: 0 auto;                /* extra horizontal centering fallback */
       }
     }
+
     
   </style>
 </head>
