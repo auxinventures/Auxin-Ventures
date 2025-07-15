@@ -556,23 +556,18 @@
       .card-row {
         display: flex;
         flex-direction: column;
-        overflow-y: auto;
-        overflow-x: hidden;
-        max-height: 200px; /* 👈 Adjust height as needed */
-        gap: 1rem;
-        padding-right: 0.5rem;
+        height: 100px; /* fixed height */
+        overflow: hidden; /* disable manual scrolling */
+        position: relative;
       }
     
       .feature-card {
-        flex: 0 0 auto;
+        flex: 0 0 100px;
         width: 100%;
-        margin-bottom: 0.5rem;
+        margin: 0;
+        transition: transform 0.5s ease;
       }
     }
-
-
-
-
 
     @media (max-width: 768px) {
       .card-row {
@@ -944,6 +939,27 @@
   });
 </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const rows = document.querySelectorAll(".card-row");
+
+    rows.forEach(row => {
+      const cards = Array.from(row.children);
+      if (cards.length <= 1) return;
+
+      let index = 0;
+
+      setInterval(() => {
+        cards.forEach((card, i) => {
+          card.style.transform = `translateY(-${index * 100}px)`;
+        });
+
+        index = (index + 1) % cards.length;
+      }, 3000); // change every 3 seconds
+    });
+  });
+</script>
+  
   
   
 </body>
