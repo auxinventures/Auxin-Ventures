@@ -472,6 +472,69 @@
         filter: none;
       }
     }
+
+    .faq-section {
+      background: #f9fafc;
+      padding: 48px 20px;
+      border-radius: 16px;
+      max-width: 800px;
+      margin: 0 auto;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .faq-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 32px;
+      color: #222;
+    }
+    
+    .faq-item {
+      background: #fff;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+    
+    .faq-question {
+      width: 100%;
+      padding: 20px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-align: left;
+      background: none;
+      border: none;
+      outline: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      color: #2d70f2;
+    }
+    
+    .faq-answer {
+      padding: 0 20px 20px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #444;
+      display: none;
+    }
+    
+    .faq-question.active + .faq-answer {
+      display: block;
+    }
+    
+    .arrow {
+      font-size: 1.5rem;
+      transition: transform 0.2s;
+    }
+    
+    .faq-question.active .arrow {
+      transform: rotate(45deg);
+    }
+
+
     
   </style>
 </head>
@@ -585,17 +648,49 @@
 
   </section>
 
-<section class="faq">
-  <h2>FAQs</h2>
-  <h3>Can I use Grade AIQ with handwritten essays?</h3>
-  <p>Yes. Simply upload a photo or scan, and our AI OCR will extract the text for grading.</p>
-  <h3>Can I modify AI-generated feedback?</h3>
-  <p>Absolutely. Every score and comment is editable before you export the results.</p>
-  <h3>Is it free to try?</h3>
-  <p>Yes. Get started for free — no credit card required. We offer flexible plans as you grow.</p>
-  <h3>Does Grade AIQ support other languages?</h3>
-  <p>Yes. You can grade essays in English, German, French, and Spanish, with localized rubrics.</p>
+<section class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <button class="faq-question">
+      📝 Can I use Grade AIQ with handwritten essays?
+      <span class="arrow">+</span>
+    </button>
+    <div class="faq-answer">
+      Yes! Simply upload a scan or photo. Grade AIQ's OCR automatically extracts the text for grading.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      ✏️ Can I edit the AI-generated feedback?
+      <span class="arrow">+</span>
+    </button>
+    <div class="faq-answer">
+      Absolutely. You stay in control — all scores and feedback can be adjusted before export.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      💬 Is it really free to try?
+      <span class="arrow">+</span>
+    </button>
+    <div class="faq-answer">
+      Yes. No credit card required. Get started for free and upgrade as your needs grow.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      🌐 Does it work in multiple languages?
+      <span class="arrow">+</span>
+    </button>
+    <div class="faq-answer">
+      Grade AIQ supports grading in English, German, Spanish, and French — with localized rubrics.
+    </div>
+  </div>
 </section>
+
 
 <section id="signup">
   <h2>Start Grading Smarter Today</h2>
@@ -733,6 +828,17 @@
   });
 </script>
 
+<script>
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      button.classList.toggle('active');
+      const answer = button.nextElementSibling;
+      answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+</script>
+
+  
   
 </body>
 </html>
