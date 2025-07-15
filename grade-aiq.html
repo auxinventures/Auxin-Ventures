@@ -554,19 +554,19 @@
 
     @media (max-width: 768px) {
       .card-row {
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        flex-wrap: nowrap;
+        flex-direction: column;
+        overflow-y: auto;
+        max-height: 80vh;
+        padding-right: 0.5rem;
       }
     
       .feature-card {
-        flex: 0 0 90%;
-        min-width: 90%;
-        scroll-snap-align: start;
-        margin-right: 1rem;
+        flex: 0 0 auto;
+        min-width: 100%;
+        margin-bottom: 1rem;
       }
     }
+
 
 
     @media (max-width: 768px) {
