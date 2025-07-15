@@ -533,9 +533,12 @@
 
     .card-row {
       display: flex;
-      overflow-x: auto;
+      flex-wrap: wrap;
+      justify-content: center; /* ✅ center cards on desktop */
       gap: 1rem;
+      padding-top: 0.5rem;
     }
+
 
     .feature-card {
       background: var(--bg-light);
