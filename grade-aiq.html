@@ -569,27 +569,34 @@
       }
     }
 
-
+    .accordion-item {
+      background: #fff;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+    }
+    
     .accordion-header {
       width: 100%;
-      padding: 1rem 1.2rem;
-      background: white;
-      border: none;
-      text-align: left;
+      padding: 20px;
       font-size: 1.1rem;
       font-weight: 600;
-      cursor: pointer;
-      border-top: 1px solid #ddd;
+      text-align: left;
+      background: none;
+      border: none;
+      outline: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: var(--primary);
+      cursor: pointer;
+      color: #2d70f2;
     }
     
     .accordion-body {
       display: none;
-      padding: 1rem 1.2rem 1.5rem;
-      background: var(--bg-light);
+      padding: 0 20px 20px;
+      background: #fff;
     }
     
     .accordion-header.active + .accordion-body {
@@ -598,14 +605,15 @@
     
     .accordion-header::after {
       content: "+";
-      font-size: 1.2rem;
-      color: var(--primary);
-      transition: transform 0.3s ease;
+      font-size: 1.5rem;
+      color: #2d70f2;
+      transition: transform 0.2s;
     }
     
     .accordion-header.active::after {
       transform: rotate(45deg);
     }
+
 
     
     
@@ -622,7 +630,6 @@
   <a class="cta-outline" href="#how-it-works">How It Works</a>
 </header>
 
-
 <section class="why-trust">
   <h2>Why Educators Trust Grade AIQ</h2>
   <p style="text-align:center; color: #666; max-width: 700px; margin: auto; margin-bottom: 2rem;">
@@ -631,66 +638,72 @@
     </span>
   </p>
 
-  <div class="accordion-item">
-    <button class="accordion-header">⏱️ Save Time & Stay in Control</button>
-    <div class="accordion-body">
-      <div class="card-row scroll-container">
-        <div class="feature-card">
-          <h4>Save Time</h4>
-          <p>Grade full batches in minutes — focus more on teaching, not admin.</p>
-        </div>
-        <div class="feature-card">
-          <h4>Stay in Control</h4>
-          <p>AI assists, but you make the final call — edit all results before sharing.</p>
-        </div>
-        <div class="feature-card">
-          <h4>Export Options</h4>
-          <p>Clean, labeled reports in your preferred format — per student or in bulk.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- ✅ Wrap everything in .faq-wrapper for consistent padding/layout -->
+  <div class="faq-wrapper">
 
-  <div class="accordion-item">
-    <button class="accordion-header">🎓 Smarter, Fairer Grading</button>
-    <div class="accordion-body">
-      <div class="card-row scroll-container">
-        <div class="feature-card">
-          <h4>Level-Aware Scoring</h4>
-          <p>From primary school to PhD — feedback adapts to student level.</p>
-        </div>
-        <div class="feature-card">
-          <h4>Custom Rubrics</h4>
-          <p>Set tone, points, and categories to match your grading style.</p>
-        </div>
-        <div class="feature-card">
-          <h4>Editable Feedback</h4>
-          <p>Clear, structured suggestions per rubric — fully customizable.</p>
+    <div class="accordion-item">
+      <button class="accordion-header">⏱️ Save Time & Stay in Control</button>
+      <div class="accordion-body">
+        <div class="card-row">
+          <div class="feature-card">
+            <h4>Save Time</h4>
+            <p>Grade full batches in minutes — focus more on teaching, not admin.</p>
+          </div>
+          <div class="feature-card">
+            <h4>Stay in Control</h4>
+            <p>AI assists, but you make the final call — edit all results before sharing.</p>
+          </div>
+          <div class="feature-card">
+            <h4>Export Options</h4>
+            <p>Clean, labeled reports in your preferred format — per student or in bulk.</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="accordion-item">
-    <button class="accordion-header">🌍 Flexible & Inclusive</button>
-    <div class="accordion-body">
-      <div class="card-row scroll-container">
-        <div class="feature-card">
-          <h4>Upload Any Format</h4>
-          <p>Accepts typed or handwritten essays in nearly any file format.</p>
-        </div>
-        <div class="feature-card">
-          <h4>Multilingual Support</h4>
-          <p>English, German, Spanish, and French — all with localized scoring logic.</p>
-        </div>
-        <div class="feature-card">
-          <h4>AI & Similarity Checks</h4>
-          <p>Detects questionable content and shows confidence levels instantly.</p>
+    <div class="accordion-item">
+      <button class="accordion-header">🎓 Smarter, Fairer Grading</button>
+      <div class="accordion-body">
+        <div class="card-row">
+          <div class="feature-card">
+            <h4>Level-Aware Scoring</h4>
+            <p>From primary school to PhD — feedback adapts to student level.</p>
+          </div>
+          <div class="feature-card">
+            <h4>Custom Rubrics</h4>
+            <p>Set tone, points, and categories to match your grading style.</p>
+          </div>
+          <div class="feature-card">
+            <h4>Editable Feedback</h4>
+            <p>Clear, structured suggestions per rubric — fully customizable.</p>
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header">🌍 Flexible & Inclusive</button>
+      <div class="accordion-body">
+        <div class="card-row">
+          <div class="feature-card">
+            <h4>Upload Any Format</h4>
+            <p>Accepts typed or handwritten essays in nearly any file format.</p>
+          </div>
+          <div class="feature-card">
+            <h4>Multilingual Support</h4>
+            <p>English, German, Spanish, and French — all with localized scoring logic.</p>
+          </div>
+          <div class="feature-card">
+            <h4>AI & Similarity Checks</h4>
+            <p>Detects questionable content and shows confidence levels instantly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
+
 
 
 <section class="steps" id="how-it-works">
