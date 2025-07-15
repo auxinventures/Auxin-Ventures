@@ -722,98 +722,6 @@
       }
     }
 
-    /* Base styling */
-    .how-it-works {
-      padding: 4rem 2rem;
-      max-width: 1100px;
-      margin: auto;
-    }
-    
-    .how-it-works h2 {
-      text-align: center;
-      font-size: 2.2rem;
-      margin-bottom: 3rem;
-    }
-    
-    /* Mobile layout (stacked) */
-    .how-step {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 3rem;
-    }
-    
-    .how-step.reverse {
-      flex-direction: column;
-    }
-    
-    .how-text {
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    
-    .how-text h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.75rem;
-    }
-    
-    .how-text p {
-      font-size: 1rem;
-      color: #666;
-      max-width: 500px;
-      margin: auto;
-    }
-    
-    .how-graphic img {
-      max-width: 300px;
-      width: 100%;
-      height: auto;
-    }
-    
-    /* Desktop layout (alternating) */
-    @media (min-width: 769px) {
-      .how-step {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        gap: 3rem;
-      }
-    
-      .how-step.reverse {
-        flex-direction: row-reverse;
-      }
-    
-      .how-text,
-      .how-graphic {
-        flex: 1;
-        max-width: 50%;
-        padding: 0 1rem;
-      }
-    
-      .how-text {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-    
-      .how-text h3,
-      .how-text p {
-        text-align: center;
-      }
-    
-      .how-graphic {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-    
-      .how-graphic img {
-        max-width: 100%;
-        height: auto;
-      }
-    }
     
     
   </style>
@@ -906,45 +814,56 @@
 
 
 <section class="how-it-works">
-  <h2>How It Works</h2>
+  <h2>How does it work?</h2>
+  <p class="how-subtext">
+    Save hours every week. In just four simple steps, Grade AIQ gives you fast, editable feedback — tailored to your grading style and students' needs.
+  </p>
 
+  <!-- Step 1 -->
   <div class="how-step">
     <div class="how-text">
-      <h3>Step 1: Upload</h3>
-      <p>Upload scanned or typed student essays in seconds.</p>
+      <span class="step-badge">1st STEP</span>
+      <h3>Upload Essays</h3>
+      <p>Drag in PDFs, Word docs, or scans. Our OCR even works with handwriting.</p>
     </div>
     <div class="how-graphic">
-      <img src="owl-upload.png" alt="Upload Owl" />
+      <img src="grade-aiq-owl-step1.png" alt="Owl Uploads Essay" />
     </div>
   </div>
 
+  <!-- Step 2 -->
   <div class="how-step reverse">
     <div class="how-text">
-      <h3>Step 2: Choose Your Rubric</h3>
-      <p>Select a preset or upload your own grading rubric.</p>
+      <span class="step-badge">2nd STEP</span>
+      <h3>Select or Set a Rubric</h3>
+      <p>Choose from prebuilt options or customize point weights, tone, and categories.</p>
     </div>
     <div class="how-graphic">
-      <img src="owl-rubric.png" alt="Rubric Owl" />
+      <img src="grade-aiq-owl-step2.png" alt="Owl Chooses Rubric" />
     </div>
   </div>
 
+  <!-- Step 3 -->
   <div class="how-step">
     <div class="how-text">
-      <h3>Step 3: Let AI Grade</h3>
-      <p>Get instant, editable feedback with scores per category.</p>
+      <span class="step-badge">3rd STEP</span>
+      <h3>Review Feedback</h3>
+      <p>Instant feedback, category by category — fully editable before sharing.</p>
     </div>
     <div class="how-graphic">
-      <img src="owl-grading.png" alt="Grading Owl" />
+      <img src="grade-aiq-owl-step3.png" alt="Owl Reviews Feedback" />
     </div>
   </div>
 
+  <!-- Step 4 -->
   <div class="how-step reverse">
     <div class="how-text">
-      <h3>Step 4: Export Results</h3>
-      <p>Download detailed reports or summaries in PDF, DOCX, or Excel.</p>
+      <span class="step-badge">4th STEP</span>
+      <h3>Export Reports</h3>
+      <p>Download polished PDFs, DOCX, or Excel summaries — per essay or batch.</p>
     </div>
     <div class="how-graphic">
-      <img src="owl-export.png" alt="Export Owl" />
+      <img src="grade-aiq-owl-step4.png" alt="Owl Exports Reports" />
     </div>
   </div>
 </section>
