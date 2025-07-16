@@ -346,6 +346,12 @@
       .review-slider-container {
         overflow: hidden;
       }
+    
+      /* 🔒 Hides the mobile scroll cards + dots on desktop */
+      .how-steps-mobile-scroll,
+      .how-dots {
+        display: none;
+      }
     }
 
 
@@ -821,18 +827,15 @@
       position: absolute;
       font-size: 1.5rem;
       color: #aaa;
-      background: rgba(255, 255, 255, 0.8);
-      padding: 0.25rem 0.4rem;
-      border-radius: 50%;
       pointer-events: none;
     }
     
     .swipe-triangles .left {
-      left: 0.5rem;
+      left: 0.4rem;
     }
     
     .swipe-triangles .right {
-      right: 0.5rem;
+      right: 0.4rem;
     }
     
     @media (max-width: 768px) {
