@@ -864,7 +864,17 @@
       }
     }
     
+    @media (min-width: 769px) {
+      .step1-img-desktop {
+        max-width: 150%; /* ⬅️ increase beyond container width */
+        width: 150%;
+        transform: translateX(-10%); /* ⬅️ shift left to keep centered */
+      }
     
+      .how-img {
+        overflow: visible; /* ensure overflow is allowed */
+      }
+    }    
     
   </style>
 </head>
@@ -979,7 +989,7 @@
       <div class="how-graphic">
         <picture class="how-img">
           <source srcset="grade-aiq-owl-step1-w.png" media="(min-width: 769px)">
-          <img src="grade-aiq-owl-step1.png" alt="Owl Uploads Essay" />
+          <img src="grade-aiq-owl-step1.png" alt="Owl Uploads Essay" class="step1-img-desktop" />
         </picture>
       </div>
     </div>
