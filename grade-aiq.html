@@ -911,6 +911,118 @@
       }
     }
 
+    .pricing-section {
+      background: var(--bg-light);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    
+    .pricing-intro h2 {
+      font-size: 2.25rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .pricing-intro p {
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      font-size: 1rem;
+      color: var(--text-light);
+    }
+    
+    .pricing-cards {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      position: relative;
+      flex-wrap: wrap;
+    }
+    
+    .pricing-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      max-width: 280px;
+      flex: 0 0 280px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 1;
+    }
+    
+    .pricing-card .label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: var(--bg-muted);
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+    
+    .pricing-card .price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .pricing-card .description {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    
+    .pricing-card p {
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+    
+    .pricing-card.free {
+      background: #f4f6fa;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .pricing-card.paid {
+      background: var(--primary);
+      color: white;
+      transform: scale(1.05);
+      z-index: 3;
+    }
+    
+    .pricing-card.paid .label {
+      background: white;
+      color: var(--primary);
+    }
+    
+    .pricing-card.paid .price,
+    .pricing-card.paid .description {
+      color: white;
+    }
+    
+    .pricing-card.paid a.cta-outline {
+      border: 2px solid white;
+      color: white;
+    }
+    
+    .pricing-card:hover {
+      transform: scale(1.1);
+      z-index: 4;
+    }
+    
+    @media (max-width: 768px) {
+      .pricing-cards {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+    
+      .pricing-card {
+        transform: none !important;
+      }
+    }
 
     
   </style>
@@ -1198,7 +1310,7 @@
     </p>
 </div>
 </section>
-
+  
 <section class="faq-section" style="background: #f9fafc; margin-top: 0rem;">
   <div class="faq-wrapper" style="display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center;">
 
@@ -1213,6 +1325,32 @@
 
   </div>
 </section>
+
+<section class="pricing-section">
+  <div class="pricing-intro">
+    <h2>Pricing</h2>
+    <p>Try out our AI for free and convince yourself. Start revolutionizing your study journey with our study packages and subscriptions.</p>
+  </div>
+  <div class="pricing-cards">
+    <div class="pricing-card free">
+      <div class="label">FREE</div>
+      <div class="price">0€</div>
+      <div class="description">For the first deck</div>
+      <p>Experience the magic first hand</p>
+      <a href="#" class="cta-button">Try for free</a>
+    </div>
+    <div class="pricing-card paid">
+      <div class="label">YEARLY SUB</div>
+      <div class="price">5€</div>
+      <div class="description">Per month<br>(yearly subscription)</div>
+      <p>Become a study magician yourself</p>
+      <a href="#" class="cta-outline">Let’s try it!</a>
+    </div>
+  </div>
+</section>
+
+
+  
 <section class="faq-section" style="background: #f9fafc; margin-top: 0rem;">  
   <div class="faq-wrapper">
 
