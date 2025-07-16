@@ -805,6 +805,45 @@
         margin-top: 0.5rem;
       }
     }
+
+    .swipe-triangles {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      pointer-events: none;
+      transform: translateY(-50%);
+      z-index: 5;
+    }
+    
+    .swipe-triangles .triangle {
+      position: absolute;
+      font-size: 1.5rem;
+      color: #aaa;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 0.25rem 0.4rem;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    
+    .swipe-triangles .left {
+      left: 0.5rem;
+    }
+    
+    .swipe-triangles .right {
+      right: 0.5rem;
+    }
+    
+    @media (max-width: 768px) {
+      .how-step {
+        position: relative;
+      }
+    
+      .swipe-triangles {
+        display: block;
+      }
+    }
     
     
     
@@ -974,6 +1013,9 @@
       <div class="how-graphic">
         <img src="grade-aiq-owl-step1.png" alt="Owl Uploads Essay" />
       </div>
+      <div class="swipe-triangles">
+        <div class="triangle right">&#9654;</div>
+      </div>
     </div>
   
     <!-- Step 2 -->
@@ -986,6 +1028,10 @@
       <div class="how-graphic">
         <img src="grade-aiq-owl-step2.png" alt="Owl Chooses Rubric" />
       </div>
+      <div class="swipe-triangles">
+        <div class="triangle left">&#9664;</div>
+        <div class="triangle right">&#9654;</div>
+      </div>      
     </div>
   
     <!-- Step 3 -->
@@ -998,6 +1044,10 @@
       <div class="how-graphic">
         <img src="grade-aiq-owl-step3.png" alt="Owl Reviews Feedback" />
       </div>
+      <div class="swipe-triangles">
+        <div class="triangle left">&#9664;</div>
+        <div class="triangle right">&#9654;</div>
+      </div>      
     </div>
   
     <!-- Step 4 -->
@@ -1010,6 +1060,9 @@
       <div class="how-graphic">
         <img src="grade-aiq-owl-step4.png" alt="Owl Exports Reports" />
       </div>
+      <div class="swipe-triangles">
+        <div class="triangle left">&#9664;</div>
+      </div>      
     </div>
   </div>
   
