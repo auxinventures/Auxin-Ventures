@@ -847,9 +847,19 @@
         display: block;
       }
     }
-    
-    
-    
+  
+    @media (max-width: 768px) {
+      .privacy-header {
+        flex-direction: column;
+      }
+    }
+  
+    @media (min-width: 769px) {
+      .privacy-header {
+        flex-direction: row;
+      }
+    }
+     
   </style>
 </head>
 <body>
@@ -1134,18 +1144,21 @@
 </section>
 
 <section class="faq-section" style="background: #f9fafc; margin-top: 4rem;">
-  <div class="faq-wrapper">
-    <h2>Privacy-First by Design</h2>
-    <p style="font-size: 1rem; max-width: 750px; margin: 1rem auto; color: #444; text-align: center;">
+  <div class="faq-wrapper" style="display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center;">
+
+    <div class="privacy-header" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem;">
+      <img src="grade-aiq-owl-lock.png" alt="Privacy Owl" class="privacy-owl" style="width: 90px;" />
+      <h2 style="margin: 0;">Privacy-First by Design</h2>
+    </div>
+
+    <p style="font-size: 1rem; max-width: 750px; color: #444;">
       Essays are processed securely and only used to generate immediate feedback — nothing is stored on our servers or used for training.
     </p>
-    <p style="font-size: 1rem; max-width: 750px; margin: 1rem auto; color: #444; text-align: center;">
+    <p style="font-size: 1rem; max-width: 750px; color: #444;">
       No student names are required. You stay in full control of what’s uploaded and can delete everything after grading.
     </p>
+
   </div>
-</section>
-  
-<section class="faq-section">
   <div class="faq-wrapper">
     <h2>Frequently Asked Questions</h2>
 
