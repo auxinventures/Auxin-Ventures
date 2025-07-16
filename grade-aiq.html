@@ -1014,7 +1014,6 @@
   <div class="how-dots" id="howDots">
     <span></span><span></span><span></span><span></span>
   </div>
-  <p class="swipe-hint">⬅️ Swipe to view all steps ➡️</p>
 
 </section>
 
@@ -1188,21 +1187,6 @@
     setInterval(rotateReviews, 3000);
   });
 </script>
-
-<script>
-  const howContainer = document.querySelector('.how-it-works-container');
-  const howFill = document.getElementById('howProgressFill');
-
-  if (howContainer && howFill) {
-    howContainer.addEventListener('scroll', () => {
-      const scrollLeft = howContainer.scrollLeft;
-      const scrollWidth = howContainer.scrollWidth - howContainer.clientWidth;
-      const percent = (scrollLeft / scrollWidth) * 100;
-      howFill.style.width = `${percent}%`;
-    });
-  }
-</script>
-
   
 <script>
   document.addEventListener("DOMContentLoaded", () => {
