@@ -1266,21 +1266,6 @@
       border-radius: 2px;
     }
     
-    .hamburger.active .hamburger-box {
-      position: relative;
-    }
-    
-    .hamburger.active .hamburger-line:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-    
-    .hamburger.active .hamburger-line:nth-child(2) {
-      opacity: 0;
-    }
-    
-    .hamburger.active .hamburger-line:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px);
-    }
 
     
   </style>
@@ -1959,7 +1944,6 @@
     hamburger.addEventListener("click", () => {
       const isVisible = mobileMenu.style.display === "flex";
       mobileMenu.style.display = isVisible ? "none" : "flex";
-      hamburger.classList.toggle("active", !isVisible);
     });
 
     document.querySelectorAll(".mobile-fullscreen-menu a").forEach(link => {
