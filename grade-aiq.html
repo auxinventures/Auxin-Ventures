@@ -1688,7 +1688,9 @@
       const scrollLeft = container.scrollLeft;
       const containerWidth = container.offsetWidth;
       const totalScrollWidth = container.scrollWidth - containerWidth;
-      const index = Math.round((scrollLeft / totalScrollWidth) * (dots.length - 1));
+      const cardWidth = cards[0].offsetWidth + 16; // 16px assumed gap
+      const index = Math.round(scrollLeft / cardWidth);
+
 
       dots.forEach((dot, i) => {
         dot.classList.toggle("active", i === index);
