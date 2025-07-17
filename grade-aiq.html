@@ -1303,6 +1303,35 @@
       display: flex;
     }    
     
+    .close-menu-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 40px;
+      height: 40px;
+      background: white;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      border-radius: 50%;
+      font-size: 1.5rem;
+      font-weight: bold;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: background 0.2s ease, color 0.2s ease;
+      z-index: 1001;
+    }
+    
+    .close-menu-button:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+
+    
   </style>
 </head>
 <body>
