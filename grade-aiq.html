@@ -1157,13 +1157,109 @@
       }
     }
     
+    .main-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      max-width: 1400px;
+      margin: auto;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: white;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .nav-logo img {
+      height: 40px;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+    
+    .nav-links li a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    
+    .nav-cta {
+      background: var(--primary);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    
+    .nav-cta:hover {
+      background: var(--primary-hover);
+    }
+    
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      font-weight: bold;
+      cursor: pointer;
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1001;
+      background: white;
+      padding: 0.5rem 0.8rem;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    
+    .mobile-fullscreen-menu {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: white;
+      z-index: 1000;
+      text-align: center;
+    }
+    
+    .mobile-fullscreen-menu a {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    @media (max-width: 768px) {
+      .desktop-only {
+        display: none !important;
+      }
+      .mobile-only {
+        display: block !important;
+      }
+      .main-nav {
+        padding: 0;
+      }
+    }
+
+
     
   </style>
 </head>
 <body>
 
 <nav class="main-nav">
-  <div class="nav-logo">
+  <div class="nav-logo desktop-only">
     <img src="grade-aiq-logo.png" alt="Grade AIQ Logo" />
   </div>
 
@@ -1179,7 +1275,7 @@
   <div class="hamburger mobile-only" id="hamburger">☰</div>
 </nav>
 
-<!-- Mobile fullscreen menu -->
+<!-- Mobile Fullscreen Menu -->
 <div class="mobile-fullscreen-menu" id="mobileFullscreenMenu">
   <a href="#how-it-works">How it works</a>
   <a href="#signup">Pricing</a>
@@ -1187,6 +1283,7 @@
   <a href="mailto:info@auxin-ventures.com">Contact</a>
   <a href="https://essay-grader-pilot-d2objfrxcoaqkvk5xfsrpt.streamlit.app/">Try for free</a>
 </div>
+
   
 
 <header class="hero">
@@ -1836,6 +1933,7 @@
   });
 </script>
 
+  
   
 </body>
 </html>
