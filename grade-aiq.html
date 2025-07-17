@@ -1004,23 +1004,14 @@
     
     @media (max-width: 768px) {
       .pricing-cards {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        gap: 1rem;
+        flex-direction: column;
+        gap: 1.5rem;
       }
     
       .pricing-card {
-        min-width: 85%;
-        flex: 0 0 auto;
-        scroll-snap-align: start;
         transform: none !important;
       }
     }
-
 
     /* Container allows horizontal swipe */
     .pricing-scroll {
