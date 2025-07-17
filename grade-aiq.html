@@ -1060,19 +1060,25 @@
 
     }
 
+    #pricingDots {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    
     #pricingDots span {
       display: inline-block;
       height: 10px;
       width: 10px;
-      margin: 0 4px;
+      margin: 0 6px;
       background: #ccc;
       border-radius: 50%;
       transition: background 0.3s ease;
     }
     
     #pricingDots span.active {
-      background: var(--primary);
+      background: var(--primary); /* Already defined as #2d70f2 */
     }
+
     
     
   </style>
@@ -1675,20 +1681,27 @@
     const container = document.querySelector(".pricing-scroll");
     const cards = container.querySelectorAll(".pricing-card");
     const dots = document.querySelectorAll("#pricingDots span");
-  
-    if (!container || dots.length === 0) return;
-  
+
+    if (!container || dots.length === 0 || cards.length === 0) return;
+
     container.addEventListener("scroll", () => {
       const scrollLeft = container.scrollLeft;
-      const cardWidth = cards[0].offsetWidth + 16; // 16 = assumed gap
-      const index = Math.round(scrollLeft / cardWidth);
-  
+      const containerWidth = container.offsetWidth;
+      const totalScrollWidth = container.scrollWidth - containerWidth;
+      const index = Math.round((scrollLeft / totalScrollWidth) * (dots.length - 1));
+
       dots.forEach((dot, i) => {
         dot.classList.toggle("active", i === index);
       });
     });
+
+    // Optional: set first dot active on load
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === 0);
+    });
   });
 </script>
+
   
   
 </body>
