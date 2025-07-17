@@ -1294,6 +1294,14 @@
         display: none !important;
       }
     }
+
+    .mobile-fullscreen-menu {
+      display: none;
+    }
+    
+    .mobile-fullscreen-menu.open {
+      display: flex;
+    }    
     
   </style>
 </head>
@@ -1967,15 +1975,14 @@
   document.addEventListener("DOMContentLoaded", () => {
     const hamburger = document.getElementById("hamburger");
     const mobileMenu = document.getElementById("mobileFullscreenMenu");
-
+  
     hamburger.addEventListener("click", () => {
-      const isVisible = mobileMenu.style.display === "flex";
-      mobileMenu.style.display = isVisible ? "none" : "flex";
+      mobileMenu.classList.toggle("open");
     });
-
+  
     document.querySelectorAll(".mobile-fullscreen-menu a").forEach(link => {
       link.addEventListener("click", () => {
-        mobileMenu.style.display = "none";
+        mobileMenu.classList.remove("open");
       });
     });
   });
