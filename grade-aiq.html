@@ -1071,124 +1071,13 @@
       }
     }
 
-
-    .main-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      max-width: 1400px;
-      margin: auto;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: white;
-      border-bottom: 1px solid #eee;
-    }
-    
-    .nav-logo img {
-      height: 40px;
-    }
-    
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-    }
-    
-    .nav-links li a {
-      text-decoration: none;
-      color: var(--text-dark);
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-    
-    .nav-cta {
-      background: var(--primary);
-      color: white;
-      padding: 0.6rem 1.2rem;
-      border-radius: 6px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-    
-    .nav-cta:hover {
-      background: var(--primary-hover);
-    }
-    
-    .hamburger {
-      display: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-    
-    .mobile-menu {
-      display: none;
-      flex-direction: column;
-      background: white;
-      padding: 1rem 2rem;
-      gap: 1rem;
-      border-top: 1px solid #ddd;
-      position: absolute;
-      top: 70px;
-      left: 0;
-      right: 0;
-      z-index: 99;
-    }
-    
-    .mobile-menu a {
-      text-decoration: none;
-      color: var(--text-dark);
-      font-weight: 600;
-    }
-    
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-    
-      .nav-cta {
-        display: none;
-      }
-    
-      .hamburger {
-        display: block;
-      }
-    }
-    
     
     
   </style>
 </head>
 <body>
 
-<nav class="main-nav">
-  <div class="nav-logo">
-    <img src="grade-aiq-logo.png" alt="Grade AIQ Logo" />
-  </div>
-  <ul class="nav-links">
-    <li><a href="#how-it-works">How it works</a></li>
-    <li><a href="#signup">Pricing</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="mailto:info@auxin-ventures.com">Contact</a></li>
-  </ul>
-  <a href="https://essay-grader-pilot-d2objfrxcoaqkvk5xfsrpt.streamlit.app/" class="nav-cta">Try for free</a>
-
-  <!-- Mobile menu button -->
-  <div class="hamburger" id="hamburger">
-    ☰
-  </div>
-</nav>
-
-<!-- Mobile menu dropdown -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#how-it-works">How it works</a>
-  <a href="#signup">Pricing</a>
-  <a href="#faq">FAQ</a>
-  <a href="mailto:info@auxin-ventures.com">Contact</a>
-  <a href="https://essay-grader-pilot-d2objfrxcoaqkvk5xfsrpt.streamlit.app/">Try for free</a>
-</div>
+<a href="https://essay-grader-pilot-d2objfrxcoaqkvk5xfsrpt.streamlit.app/" class="login-button-fixed">Login</a>  
 
 <header class="hero">
   <h1>Regain Your Evenings. Grade Smarter with Grade AIQ.</h1>
@@ -1819,17 +1708,6 @@
   });
 </script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const hamburger = document.getElementById("hamburger");
-    const mobileMenu = document.getElementById("mobileMenu");
-
-    hamburger.addEventListener("click", () => {
-      mobileMenu.style.display = mobileMenu.style.display === "flex" ? "none" : "flex";
-    });
-  });
-</script>
-  
   
 </body>
 </html>
