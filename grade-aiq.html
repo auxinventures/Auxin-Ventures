@@ -1051,43 +1051,9 @@
       }
     
       .pricing-card {
-        min-width: calc(100% - 2rem); /* accounts for left/right padding */
-        max-width: 100%;
+        min-width: 85%;
         flex: 0 0 auto;
-        scroll-snap-align: start;
         transform: none !important;
-      }
-
-    }
-
-    #pricingDots {
-      text-align: center;
-      margin-top: 1.5rem;
-    }
-    
-    #pricingDots span {
-      display: inline-block;
-      height: 10px;
-      width: 10px;
-      margin: 0 6px;
-      background: #ccc;
-      border-radius: 50%;
-      transition: background 0.3s ease;
-    }
-    
-    #pricingDots span.active {
-      background: var(--primary); /* Already defined as #2d70f2 */
-    }
-    
-    @media (max-width: 768px) {
-      .pricing-card {
-        min-width: calc(100% - 2rem); /* already in your code */
-        max-width: 100%;
-        flex: 0 0 auto;
-        min-height: 480px; /* 🔧 Add this to unify height */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
       }
     }
 
@@ -1691,31 +1657,21 @@
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector(".pricing-scroll");
-    const cards = container.querySelectorAll(".pricing-card");
     const dots = document.querySelectorAll("#pricingDots span");
 
-    if (!container || dots.length === 0 || cards.length === 0) return;
+    if (!container || dots.length === 0) return;
 
     container.addEventListener("scroll", () => {
       const scrollLeft = container.scrollLeft;
-      const containerWidth = container.offsetWidth;
-      const totalScrollWidth = container.scrollWidth - containerWidth;
-      const cardWidth = cards[0].offsetWidth + 16; // 16px assumed gap
+      const cardWidth = container.clientWidth;
       const index = Math.round(scrollLeft / cardWidth);
-
 
       dots.forEach((dot, i) => {
         dot.classList.toggle("active", i === index);
       });
     });
-
-    // Optional: set first dot active on load
-    dots.forEach((dot, i) => {
-      dot.classList.toggle("active", i === 0);
-    });
   });
 </script>
-
   
   
 </body>
