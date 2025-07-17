@@ -1078,6 +1078,18 @@
     #pricingDots span.active {
       background: var(--primary); /* Already defined as #2d70f2 */
     }
+    
+    @media (max-width: 768px) {
+      .pricing-card {
+        min-width: calc(100% - 2rem); /* already in your code */
+        max-width: 100%;
+        flex: 0 0 auto;
+        min-height: 480px; /* 🔧 Add this to unify height */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
 
     
     
