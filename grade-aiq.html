@@ -1013,6 +1013,42 @@
       }
     }
 
+    /* Container allows horizontal swipe */
+    .pricing-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 1rem;
+    }
+    
+    .pricing-cards {
+      display: flex;
+      gap: 1rem;
+      scroll-snap-type: x mandatory;
+      scroll-padding: 1rem;
+    }
+    
+    /* Each card snaps cleanly */
+    .pricing-card {
+      scroll-snap-align: start;
+    }
+    
+    /* On mobile: prevent wrap, allow scroll */
+    @media (max-width: 768px) {
+      .pricing-cards {
+        flex-wrap: nowrap;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    
+      .pricing-card {
+        min-width: 85%;
+        flex: 0 0 auto;
+        transform: none !important;
+      }
+    }
+
+    
     
   </style>
 </head>
@@ -1320,22 +1356,25 @@
     <h2>Pricing</h2>
     <p>Try out our AI for free and convince yourself. Start revolutionizing your study journey with our study packages and subscriptions.</p>
   </div>
-  <div class="pricing-cards">
-    <div class="pricing-card free">
-      <div class="label">FREE</div>
-      <div class="price">$0</div>
-      <div class="description">For the first 7 days</div>
-      <p>Experience the magic first hand</p>
-      <a href="#" class="cta-button">Try for free</a>
+
+  <div class="pricing-scroll">
+    <div class="pricing-cards">
+      <div class="pricing-card free">
+        <div class="label">FREE</div>
+        <div class="price">$0</div>
+        <div class="description">For the first 7 days</div>
+        <p>Experience the magic first hand</p>
+        <a href="#" class="cta-button">Try for free</a>
+      </div>
+      <div class="pricing-card paid">
+        <div class="label">YEARLY SUB</div>
+        <div class="price">$19.99</div>
+        <div class="description">Per month<br>(yearly subscription)</div>
+        <p>Become a grading magician yourself</p>
+        <a href="#" class="cta-outline">Let’s try it!</a>
+      </div>
     </div>
-    <div class="pricing-card paid">
-      <div class="label">YEARLY SUB</div>
-      <div class="price">$19.99</div>
-      <div class="description">Per month<br>(yearly subscription)</div>
-      <p>Become a grading magician yourself</p>
-      <a href="#" class="cta-outline">Let’s try it!</a>
-    </div>
-  </div>
+  </div>  
 </section>
 
 
