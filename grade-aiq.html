@@ -921,7 +921,7 @@
     .pricing-cards {
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: stretch;
       gap: 2rem;
       position: relative;
       flex-wrap: wrap;
@@ -934,10 +934,13 @@
       padding: 2rem 1.5rem;
       text-align: center;
       max-width: 280px;
-      flex: 0 0 280px;
+      flex: 1 1 280px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* ✅ evenly spaced content */
     }
+
     
     .pricing-card .label {
       font-size: 0.8rem;
@@ -1027,10 +1030,11 @@
         scroll-behavior: smooth;
         gap: 1rem;
         padding: 1rem 0;
+        overscroll-behavior-x: contain;
       }
     
       .mobile-only .pricing-card {
-        flex: 0 0 85%;
+        flex: 0 0 calc(100vw - 3rem);
         scroll-snap-align: center;
         margin: 0 auto;
         transform: none !important;
