@@ -1033,12 +1033,13 @@
         overscroll-behavior-x: contain;
       }
     
-      .mobile-only .pricing-card {
-        flex: 0 0 calc(100vw - 3rem);
-        scroll-snap-align: center;
-        margin: 0 auto;
-        transform: none !important;
-      }
+    .mobile-only .pricing-card {
+      flex: 0 0 100%;
+      max-width: 100%;
+      scroll-snap-align: center;
+      margin: 0 auto;
+      transform: none !important;
+    }
     
       .pricing-dots {
         text-align: center;
@@ -1367,6 +1368,7 @@
   <div class="pricing-intro">
     <h2>Pricing</h2>
     <p>Try out our AI for free and convince yourself. Start revolutionizing your study journey with our study packages and subscriptions.</p>
+    <p></p>
   </div>
   <!-- DESKTOP VERSION (unchanged layout) -->
   <div class="pricing-cards desktop-only">
