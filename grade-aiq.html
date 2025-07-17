@@ -1383,12 +1383,7 @@
         <a href="#" class="cta-outline">Let’s try it!</a>
       </div>
     </div>
-  </div>
-  <div class="how-dots" id="pricingDots">
-    <span></span>
-    <span></span>
-  </div>
-
+  </div>  
 </section>
 
 
@@ -1654,25 +1649,6 @@
   });
 </script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const container = document.querySelector(".pricing-scroll");
-    const dots = document.querySelectorAll("#pricingDots span");
-
-    if (!container || dots.length === 0) return;
-
-    container.addEventListener("scroll", () => {
-      const scrollLeft = container.scrollLeft;
-      const cardWidth = container.clientWidth;
-      const index = Math.round(scrollLeft / cardWidth);
-
-      dots.forEach((dot, i) => {
-        dot.classList.toggle("active", i === index);
-      });
-    });
-  });
-</script>
-  
   
 </body>
 </html>
