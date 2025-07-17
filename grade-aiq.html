@@ -1015,15 +1015,25 @@
     }
     
     @media (max-width: 768px) {
-      .pricing-cards {
-        flex-direction: column;
-        gap: 1.5rem;
+      .pricing-cards-scroll.mobile-only {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+        gap: 1rem;
+        padding: 1rem 0;
       }
     
-      .pricing-card {
+      .pricing-cards-scroll.mobile-only .pricing-card {
+        flex: 0 0 80vw; /* ✅ Smaller than full width to show side-by-side scrolling */
+        max-width: 80vw;
+        scroll-snap-align: center;
+        margin: 0;
         transform: none !important;
       }
     }
+
     
     /* Show/hide desktop vs mobile pricing layouts */
     .desktop-only { display: flex; }
